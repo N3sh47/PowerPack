@@ -50,10 +50,10 @@ Open `docs/intro.md` (this page) and edit some lines: the site **reloads automat
 
 
 # SSIS PowerPack Help
-![SSIS PowerPack](/img/welcome/SSIS-PowerPack-Logo.png)
+![SSIS PowerPack](/img/SSIS-PowerPack-Logo.png)
 
 ## SSIS PowerPack Documentation
 
 
 
-![ZappySYS](/img/welcome/zappysys-logo-small.png)
+![ZappySYS](/img/zappysys-logo-small.png)
