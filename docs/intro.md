@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+
 # SSIS PowerPack Help
 ![SSIS PowerPack](/img/SSIS-PowerPack-Logo.png)
 
