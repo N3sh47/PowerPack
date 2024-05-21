@@ -53,7 +53,7 @@ title: Release Notes
    - `NEW:` API Connector Framework - Add OptionsEndPointWhere - Simple WHERE clause to reduce data coming from OptionsEndPoint (e.g. Type='EMP' and Code=1 and Day IN(1,2,3) )
    - `NEW:` API Connector Framework - Add Regex and Wildcard Pattern support in TrustedDomains (e.g. *.abc.com* --OR-- regex::(.*?)abc.om)
    - `NEW:` API Connector Framework - Allow LayoutMap to Bind with Parameters for SELECT operation
-   - `NEW:` API Connector Framework - Allow to use multiple parameters with Direct Placeholder functions (e.g. <<[$p1$],FUN_xxxx>> <<[$p2$],FUN_xxxx>> )
+   - `NEW:` API Connector Framework - Allow to use multiple parameters with Direct Placeholder functions `(e.g. <<[$p1$],FUN_xxxx>> <<[$p2$],FUN_xxxx>> )`
    - `NEW:` API Connector Framework - Provide OptionsExtra Property to include Extra Label / Value Pairs to append / prefix in resultset (use ~ prefix / suffix to control position of extra values e.g. Label 1=value1;Label 2=value2~ )
    - `NEW:` API Source - Allow to Filter Table List by entry type (i.e. All, Tables, EndPoints, Query)
    - `NEW:` API Source, API Destination - Show help on how to use Variable / Dynamic Values for Parameters
@@ -61,7 +61,7 @@ title: Release Notes
    - `NEW:` Azure Storage Task, Amazon Storage Task - Improve error message when bad character used in Meta or Tag (Right now it says bad request 400)
    - `NEW:` Azure Storage, Amazon Storage, Secure FTP, Advanced File System - Option to SKIP result set with ORDER BY X ASC or DESC (Useful for Delete / Copy / Download /Upload / List all files except top 1 - e.g. newest or oldest)
    - `NEW:` Excel Source - Choose Tab automatically with matching string in any Tab - New Property SearchStringForTabSelect
-   - `NEW:` Excel Source - Provide a way to read all Tabs with matching regex (e.g. SELECT * FROM [Sales_(.*)--regex] )
+   - `NEW:` Excel Source - Provide a way to read all Tabs with matching regex `(e.g. SELECT * FROM [Sales_(.*)--regex] )`
    - `NEW:` Export CSV Task - Provide an easy option to add escape rule for Double Quote
    - `NEW:` General - Add Help links under General Page to explain how to handle parameters / secret values
    - `NEW:` JSON / XML / CSV Generator Transform - Provide a clear note how to include some Upstream Columns in Downstream (Found on Add/Edit Attribute UI but for many users hard to notice)
