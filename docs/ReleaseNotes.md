@@ -49,4 +49,27 @@ title: Release Notes
    - `NEW:` API Connector - OneDrive - Token URL list as Multi-Tenant or Single Tenant to avoid confusion
    - `NEW:` API Connector - SharePoint - Add new endpoint get_excel_worksheet_autodetect to read WorkSheet data without knowing Address Range e.g. A1:F100 - Support Dynamic Row / Column count
    - `NEW:` API Connector - SharePoint - Added support for Managed Metadata fields (Show Label, WssId and TermGuid)
-   - `NEW:` API Connector - SharePoint - Provide Insert Update, Delete, Lookup options for LookupItem Table (Previously you can only see List names as Table names based on default SiteId on Connection Settings)
+   - `NEW:` API Connector - SharePoint - Provide Insert Update, Delete, Lookup options for LookupItem Table (Previously you can only see List names as Table names based on default SiteId on Connection Settings).
+
+### Bug fixes
+
+   - `FIX:` API Connection Manager - When refresh token is blank and refresh token file is used, it produces an unauthorized error (401)
+   - `FIX:` API Connector - CosmosDB - get_document throws error on UI due to bad options for ConsistencyLevel
+   - `FIX:` API Connector - ElasticSearch - Pagination not working (never stops)
+   - `FIX:` API Connector - JIRA - Custom fields not listed correctly after you select them
+   - `FIX:` API Destination - Mapped Columns not used if name not matching exactly same as Target column (input metadata)
+   - `FIX:` API Source, API Destination - You might get an exception after selecting connection - Exception from HRESULT: 0xC0047041
+   - `FIX:` Excel Source - Metadata Scan options not working
+   - `FIX:` Excel, PostgreSql, Redshift Source - Change from Table mode to Query mode doesn't create correct SQL sometimes (when Sheet name contains space or other special characters)
+   - `FIX:` Export Excel Task - Offset Cell option Trimmed on UI
+   - `FIX:` General - Some registry key entries not cleaned up (under HKEY_CURRENT_USER\.DEFAULT\SOFTWARE\Classes\CLSID) if Service account has no write access to HKEY_CLASSES_ROOT
+   - `FIX:` Google Data Connection - Use of Service Account doesnt renew OAuth token after 1 hour in long running job
+   - `FIX:` JSON / XML / CSV Generator Transform - Date format dropdown is empty (was showing formats before v5.2)
+   - `FIX:` OAuth Connection Manager - Blank Access token throw error if refresh token is there (AccessToken should be ignored if RefreshToken is used everytime to fetch new AccessToken)
+   - `FIX:` OAuth Connection Manager - If RefreshToken on UI is empty then Refresh Token File Path is not used
+   - `FIX:` Reporting Services Task - When Export as Email checked it always deletes local file even you checked Export as File along with Email
+   - `FIX:` Salesforce Connection Manager - AllOrNone, AllowFieldTruncation and AllowSaveOnDuplicates Options not working
+   - `FIX:` Salesforce Source - Scan upto 500 rows when SQL has nested fields (some rows might have nulls so may not detect nested field names unless you scan many rows)
+   - `FIX:` Salesforce Source - When nested field value is null in first row it may not detected related fields in Query Mode (e.g. Account name null for => SELECT Id, Account.Name from Contact) - Work fine in Preview but Columns Tab (Meta) not listing Account.Name
+   - `FIX:` Secure FTP Task - Delete source file after successful transfer option is not working if you check Use Partial extension option
+   - `FIX:` Validation Task - File Count property validation throws error - Specified argument was out of range
