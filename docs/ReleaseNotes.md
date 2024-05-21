@@ -22,3 +22,17 @@ title: Release Notes
    - `NEW:` JSON / XML / CSV Source, REST API Task, Web API Destination - Show clear message how to pass body with GET request when user click edit button next to disabled body
    - `NEW:` Salesforce Source - Allow to detect metadata for simple query where table is empty without throwing error - No records returned for specified table/query
    - `NEW:` Upsert Destination - Add Explanation Link about Insert and Update Checkboxes
+
+
+### Bug fixes
+
+   - `FIX:` API Connector - Azure DevOps - Using slash throws JSON encoding error sometimes (e.g. IterationPath can have slash)
+   - `FIX:` API Connector - Google Drive - create_folder endpoint creating file rather than folder
+   - `FIX:` API Connector - Google Drive - EndPoint list_files should not include folders
+   - `FIX:` API Connector - Google Drive - EndPoints like list_files, list_folders, list_items and tables like Files, Folders should not include deleted items
+   - `FIX:` Secure FTP Task - Upload Action does not throw error if source file is missing
+
+
+## Version 5.3.1.10901 [Sep 20, 2023]
+---
+### New Features/Improvements
