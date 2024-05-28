@@ -79,5 +79,5 @@ title: Release Notes
 ### New Features/Improvements
 
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - CosmosDB - New connector to Read / Write / Query documents and other objects (e.g. Database, Containers)
-   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Azure DevOps (TFS) - New connector to Read / Write / Query items (e.g. Tasks, Bugs, User Story)<br>
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Azure DevOps (TFS) - New connector to Read / Write / Query items (e.g. Tasks, Bugs, User Story)
    
