@@ -204,4 +204,18 @@ title: Release Notes
 ## Version 5.2.0.10327 [Apr 09, 2023]
 ---
 ### New Features/Improvements
-   
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> Google Analytics Source - Support v4 API 
+   `(GA4)`
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Outlook Mail 
+   `(Office 365)` - New connector to read / download mail and attachments from Office 365 Mail account
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Shopify - Read / Write Shopify data 
+   `(e.g. Customers, Products, Orders)`
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> All Components - Show meaningful error about decimal data corruption when SSIS cannot handle higher Precision / Scale than defined in Column Metadata
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> All Source Components - Increase ErrorMessage column length to 4000 from 1024
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Google BigQuery - Add Job Location Option for get_query and connection Level
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Add Option TreatBodyAsDirectValue 
+   `(Body parsed as input data rather than calling URL)`
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Add Option to name Dynamic Expanded Columns as CamelCase
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Add support for Dynamic ServiceUrl 
+   `(e.g. MailChimp API usecase)`
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Add Support for SingleDataset in LayoutMap 
