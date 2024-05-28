@@ -76,11 +76,19 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Documentation',
           items: [
             {
-              label: 'Tutorial',
+              label: 'SSIS PowerPack',
               to: '/docs/intro',
+            },
+            {
+              label: 'ODBC PowerPack',
+              to: '#',
+            },
+            {
+              label: 'Zappyshell',
+              to: '#',
             },
           ],
         },
