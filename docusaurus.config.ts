@@ -93,7 +93,7 @@ const config: Config = {
           ],
         },
         {
-          title: 'Community',
+          title: 'Follow Us',
           items: [
             {
               label: 'Facebook',
@@ -110,7 +110,7 @@ const config: Config = {
           ],
         },
         {
-          title: 'Follow us',
+          title: 'More',
           items: [
             // { label: 'Blog', to: '/blog' }, // Commented out since blog is disabled
           
