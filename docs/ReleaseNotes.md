@@ -221,4 +221,6 @@ title: Release Notes
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Add Support for SingleDataset in LayoutMap 
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow to pass static values for EndPoint parameters tagged with 
    `{$rows$}` function `(Right now it doesnt work if query endpoint rather than Input Rows - usecase like API Destination)`
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow to Read data From Local File - 
+   `(Set <EndPoint Url="c:\data\file.json" or ".xml" or ".csv")`
    
