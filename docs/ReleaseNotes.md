@@ -136,7 +136,7 @@ title: Release Notes
    
    `<map> tag (e.g. <map src="notes" function="FUN_BASE64ENC" /> `
    
-   or function="sometext <<{$value$},FUN_BASE64>> sometext" in Template mode
+   or `function="sometext <<{$value$},FUN_BASE64>> sometext"` in Template mode
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Source - Treat "$" as blank filter
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Source, XML Source, CSV Source - Allow API Connector Wizard to use Column Metadata for new EndPoint in Connector File
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Source, XML Source, CSV Source - Include Properties in EndPoint as Default Props when cannot be detected by Wizard as Valid Properties
