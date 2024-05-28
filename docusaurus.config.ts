@@ -110,12 +110,28 @@ const config: Config = {
           ],
         },
         {
-          title: 'More',
+          title: 'Follow us',
           items: [
             // { label: 'Blog', to: '/blog' }, // Commented out since blog is disabled
             {
-              label: 'GitHub',
-              href: 'https://github.com/N3sh47/PowerPack',
+              label: 'Facebook',
+              href: 'https://www.facebook.com/ZappySys/',
+            },
+            {
+              label: 'X',
+              href: 'https://twitter.com/zappysys/',
+            },
+            {
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/company/zappysys/',
+            },
+            {
+              label: 'Pinterest',
+              href: 'https://www.pinterest.com/Zappysys/',
+            },
+            {
+              label: 'Youtube',
+              href: 'https://youtube.com/ZappysysSoft/',
             },
           ],
         },
