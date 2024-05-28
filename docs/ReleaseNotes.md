@@ -221,14 +221,4 @@ title: Release Notes
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Add Support for SingleDataset in LayoutMap 
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow to pass static values for EndPoint parameters tagged with 
    `{$rows$}` function `(Right now it doesnt work if query endpoint rather than Input Rows - usecase like API Destination)`
-   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow to Read data From Local File - 
-   `(Set <EndPoint Url="c:\data\file.json" or ".xml" or ".csv")`
-   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow to use Png file as Logo
-   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - CData Property 
-   `(e.g. LayoutMap, Body)` or Property not String Type `(i.e. Int, Bool)` not working if you set in Template as EndPoint Attribute 
-   `(i.e. <EndPoint IncludeParentColumns="True" .... > )`
-   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Expose Layout related Properties - DoNotOutputEmptyArrayProperty, DoNotOutputEmptyNestedProperty, DoNotOutputNullProperty, XmlNameSpaces, XmlPrefix, EnableCustomEscapeSequence, CustomEscapeSequenceRule and more
-   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Generic Request - Make Content-Type and Request Method visible by default
-   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - If LayoutMap not supplied and one of the URL parameters tagged as Functions={$rows$} and EndPoint RequestFormat=Csv then automatically generate LayoutMap to produce single column Csv
-   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Provide a way to use multiple Templates 
-   `(e.g. <EndPoint Name="get_orders" Template="Order, Pagination" .... )` - Multi Inheritance
+   
