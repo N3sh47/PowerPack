@@ -204,47 +204,63 @@ title: Release Notes
 ## Version 5.2.0.10327 [Apr 09, 2023]
 ---
 ### New Features/Improvements
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> Google Analytics Source - Support v4 API (GA4)
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Outlook Mail (Office 365) - New connector to read / download mail and attachments from Office 365 Mail account
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Shopify - Read / Write Shopify data (e.g. Customers, Products, Orders)
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> All Components - Show meaningful error about decimal data corruption when SSIS cannot handle higher Precision / Scale than defined in Column Metadata
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> All Source Components - Increase ErrorMessage column length to 4000 from 1024
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Google BigQuery - Add Job Location Option for get_query and connection Level
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Add Option TreatBodyAsDirectValue (Body parsed as input data rather than calling URL)
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Add Option to name Dynamic Expanded Columns as CamelCase
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Add support for Dynamic ServiceUrl (e.g. MailChimp API usecase)
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Add Support for SingleDataset in LayoutMap 
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> Google Analytics Source - Support v4 API 
+   `(GA4)`
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Outlook Mail 
+   `(Office 365)` - New connector to read / download mail and attachments from Office 365 Mail account
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Shopify - Read / Write Shopify data 
+   `(e.g. Customers, Products, Orders)`
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> All Components - Show meaningful error about decimal data corruption when SSIS cannot handle higher Precision / Scale than defined in Column Metadata
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> All Source Components - Increase ErrorMessage column length to 4000 from 1024
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Google BigQuery - Add Job Location Option for get_query and connection Level
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Add Option TreatBodyAsDirectValue 
+   `(Body parsed as input data rather than calling URL)`
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Add Option to name Dynamic Expanded Columns as CamelCase
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Add support for Dynamic ServiceUrl 
+   `(e.g. MailChimp API usecase)`
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Add Support for SingleDataset in LayoutMap 
 
 `(e.g. <settings singledataset="True">` - Shopify Connector Usecase
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow to pass static values for EndPoint parameters tagged with {$rows$} function (Right now it doesnt work if query endpoint rather than Input Rows - usecase like API Destination)
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow to Read data From Local File - 
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow to pass static values for EndPoint parameters tagged with 
+   `{$rows$}` function `(Right now it doesnt work if query endpoint rather than Input Rows - usecase like API Destination)`
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow to Read data From Local File - 
 
 `(Set <EndPoint Url="c:\data\file.json" or ".xml" or ".csv")`
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow to use Png file as Logo
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - CData Property (e.g. LayoutMap, Body) or Property not String Type (i.e. Int, Bool) not working if you set in Template as EndPoint Attribute 
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow to use Png file as Logo
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - CData Property 
+   `(e.g. LayoutMap, Body)` or Property not String Type `(i.e. Int, Bool)` not working if you set in Template as EndPoint Attribute 
 
 `(i.e. <EndPoint IncludeParentColumns="True" .... > )`
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Expose Layout related Properties - DoNotOutputEmptyArrayProperty, DoNotOutputEmptyNestedProperty, DoNotOutputNullProperty, XmlNameSpaces, XmlPrefix, EnableCustomEscapeSequence, CustomEscapeSequenceRule and more
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Generic Request - Make Content-Type and Request Method visible by default
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - If LayoutMap not supplied and one of the URL parameters tagged as Functions={$rows$} and EndPoint RequestFormat=Csv then automatically generate LayoutMap to produce single column Csv
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Provide a way to use multiple Templates 
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Expose Layout related Properties - DoNotOutputEmptyArrayProperty, DoNotOutputEmptyNestedProperty, DoNotOutputNullProperty, XmlNameSpaces, XmlPrefix, EnableCustomEscapeSequence, CustomEscapeSequenceRule and more
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Generic Request - Make Content-Type and Request Method visible by default
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - If LayoutMap not supplied and one of the URL parameters tagged as Functions={$rows$} and EndPoint RequestFormat=Csv then automatically generate LayoutMap to produce single column Csv
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Provide a way to use multiple Templates 
 
 `(e.g. <EndPoint Name="get_orders" Template="Order, Pagination" .... )` - Multi Inheritance
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connectors - SharePoint - Drive list is not refreshed when you change Site for upload_file endpoint Parameters UI (grid)
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> API Destination - Do not throw validation error if Input column is mapped and its MapToParam which is required param
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> API Destination - Move operation dropdown under the table selection
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> API Source, API Destination - Show Parameter help link when user selects Parameter grid entry
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Add option to export Mappings on Columns Tab so its ProperCase for API Connector
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Do not output sensitive information in Log when you change LogLevel=Debugging (header name contains Session, Token or Key mask information in log)
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Provide a way to reset prompts on License Manager - Advanced Tab (e.g. Reset DP Scaling Prompt, New Version Found Prompt)
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON / XML / CSV Generator Transform - Add support for DT_NUMERIC and DT_DECIMAL - Use decimal type for higher precision floating point numbers (Decimal Type upto 38 precision / scale)
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON / XML /CSV Source, Amazon S3 / SFTP / Azure CSV, XML , JSON Source - Update notes for Enable Multi Path Mode - Its not clear that we do not allow pattern search when this option is checked
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Parser Transform, XML Parser Transform - Provide a better message for Memory is locked error due to Blob Type / Large string and MultiCast usage
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Source, XML Source, CSV Source - Add an option to redirect web exception on error output (right now it fails component rather redirect)
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> MongoDB, PostgreSql, Redshift Connection Manager - Add help link on how to configure SSH Tunnel (Local Port Forward Technique)
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> Reporting Services Task - Add an option to compress file (as Zip) for export / email attachment
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> Reporting Services Task - Allow option to add Password for Exported Zip file and Excel (xlsx / xls)
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> Secure FTP Connection Manager - Add Support for TLS 1.3
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> Secure FTP Task - Rename file to *.partial during download / upload process to indicate
-<b><span style={{ color: '#00971D' }}>NEW:</span></b> Upsert Destination - Give option to sort on custom column for Duplicate Handling (i.e. KeepFirst and KeepLast ) - Right now we sort on Key column (we should rather give option to sort on column like LastUpdatedOn)
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connectors - SharePoint - Drive list is not refreshed when you change Site for upload_file endpoint Parameters UI 
+   `(grid)`
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Destination - Do not throw validation error if Input column is mapped and its MapToParam which is required param
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Destination - Move operation dropdown under the table selection
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Source, API Destination - Show Parameter help link when user selects Parameter grid entry
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Add option to export Mappings on Columns Tab so its ProperCase for API Connector
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Do not output sensitive information in Log when you change LogLevel=Debugging 
+   `(header name contains Session, Token or Key mask information in log)`
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Provide a way to reset prompts on License Manager - Advanced Tab 
+   `(e.g. Reset DP Scaling Prompt, New Version Found Prompt)`
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON / XML / CSV Generator Transform - Add support for DT_NUMERIC and DT_DECIMAL - Use decimal type for higher precision floating point numbers 
+   `(Decimal Type upto 38 precision / scale)`
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON / XML /CSV Source, Amazon S3 / SFTP / Azure CSV, XML , JSON Source - Update notes for Enable Multi Path Mode - Its not clear that we do not allow pattern search when this option is checked
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Parser Transform, XML Parser Transform - Provide a better message for Memory is locked error due to Blob Type / Large string and MultiCast usage
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Source, XML Source, CSV Source - Add an option to redirect web exception on error output 
+   `(right now it fails component rather redirect)`
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> MongoDB, PostgreSql, Redshift Connection Manager - Add help link on how to configure SSH Tunnel 
+   `(Local Port Forward Technique)`
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> Reporting Services Task - Add an option to compress file 
+   `(as Zip)` for export / email attachment
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> Reporting Services Task - Allow option to add Password for Exported Zip file and Excel 
+   `(xlsx / xls)`
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> Secure FTP Connection Manager - Add Support for TLS 1.3
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> Secure FTP Task - Rename file to *.partial during download / upload process to indicate
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> Upsert Destination - Give option to sort on custom column for Duplicate Handling 
+   `(i.e. KeepFirst and KeepLast )` - Right now we sort on Key column `(we should rather give option to sort on column like LastUpdatedOn)`
 
