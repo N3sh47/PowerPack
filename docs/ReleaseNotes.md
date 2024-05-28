@@ -101,10 +101,13 @@ title: Release Notes
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Zoho - Updates to DELETE, SEARCH endpoints
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Add OptionsEndPointSortBy to allow sort by expression for Select Dropdown (e.g. Column1 ASC, Column2 DESC)
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Add Support for DefaultValue in Param / Column (so when Value is blank it will return DefaultValue and ignore ValueTemplate / Functions property)
-   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow `<Table Order="-1" Expand="True"... >` So you can sort dynamically expanded list by name
-   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow ColumnInfoMap in `<Column>` Tag to use DataType lookup by field value (equal, contains, regex match)
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow 
+   `<Table Order="-1" Expand="True"... >` So you can sort dynamically expanded list by name
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow ColumnInfoMap in 
+   `<Column>` Tag to use DataType lookup by field value (equal, contains, regex match)
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow Multiple columns in OptionEndPointLabel using comma separated (e.g. ProjectId,FieldName)
-   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow Multiple Filters to join result from multiple arrays e.g. `Filter="$new_rows[*]" ExtraFilters="$updated_rows[*] :: $error_rows[*]" and ExtraFilterColumns="Op=New::Op=Updated::Op=Error"`
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow Multiple Filters to join result from multiple arrays e.g. 
+   `Filter="$new_rows[*]" ExtraFilters="$updated_rows[*] :: $error_rows[*]" and ExtraFilterColumns="Op=New::Op=Updated::Op=Error"`
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow Parameters in Filter Property `(e.g. Filter="$.[$param$][*]")`
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow to disable Table Expand (DoNotValidateTableName)
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - For Write Operations (INSERT, UPDATE) - Allow to use Direct Placeholder Functions in Body / URL (right now it only works when Parameter usage found in body, it doesnt work if you do `Body={ data : "<<{$rows$},FUN_BASE64ENC>>" } )`
@@ -114,9 +117,12 @@ title: Release Notes
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> Azure Storage Task - need to improve UI in Metadata tab to show user can use variables in Value column
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> Azure Storage Task - Provide an Action to Read Tags (just like GetMetaData option)
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Add FUN_XML_TO_TEXT to extract data from XML using XPath
-   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - FUN_REGEX_EXTRACT allow to use group name in extract pattern `(e.g. \w+@(?<domain>\w+).com{{0,domain}} )`
-   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - New Function - FUN_IF - Compare two values and return match or non-match string `(e.g. <<Abc|~|Eq|~|Abc|~|Both $1 and $2 same|~|Not same,FUN_IF>> )`
-   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - New Function - FUN_IF_REGEX_MATCH - Return If Else Value on Regular Expression match or mismatch `(e.g.  - <<Abc (123)|~|\d+|~|Found $2|~|No found|~|true,FUN_IF_REGEX_MATCH>>)`
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - FUN_REGEX_EXTRACT allow to use group name in extract pattern 
+   `(e.g. \w+@(?<domain>\w+).com{{0,domain}} )`
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - New Function - FUN_IF - Compare two values and return match or non-match string 
+   `(e.g. <<Abc|~|Eq|~|Abc|~|Both $1 and $2 same|~|Not same,FUN_IF>> )`
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - New Function - FUN_IF_REGEX_MATCH - Return If Else Value on Regular Expression match or mismatch   
+   `(e.g.  - <<Abc (123)|~|\d+|~|Found $2|~|No found|~|true,FUN_IF_REGEX_MATCH>>)`
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Update AWS SDK to v3.7 (Add support for IMDSv2 in IAM Role and many more)
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> HTTP Connection Manager - Add [$url-part-regex-(some-regex-here)$] placeholder in HashSignatureFormat
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> HTTP Connection Manager - When you enable Retain Cookie Option with Dynamic Token - You may get error about Cookie format
@@ -127,9 +133,9 @@ title: Release Notes
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON / XML / CSV Source, REST API Task - ClientCertificate not supported if you change SslVersion settings other than Default
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON / XML Generator Transform, Export Task - Add option to output nested JSON /XML as encoded string - Set datatype="String" for Unbound `<map>` node (Usecase: MailChimp Bulk API / Azure DevOps Update/Insert)
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Generator Transform, Export JSON Task - Allow Placeholder Function usage for 
-   :::
-   <map> tag (e.g. <map src="notes" function="FUN_BASE64ENC" /> 
-   :::
+   
+   `<map> tag (e.g. <map src="notes" function="FUN_BASE64ENC" /> `
+   
    or function="sometext <<{$value$},FUN_BASE64>> sometext" in Template mode
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Source - Treat "$" as blank filter
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Source, XML Source, CSV Source - Allow API Connector Wizard to use Column Metadata for new EndPoint in Connector File
