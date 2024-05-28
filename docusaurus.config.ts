@@ -139,11 +139,4 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
 };
 
-module.exports = {
-  // other configurations...
-  stylesheets: [
-    'src/css/custom.css',
-  ],
-};
-
 export default config;
