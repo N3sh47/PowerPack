@@ -66,7 +66,7 @@ const config: Config = {
         },
         // {to: '/blog', label: 'Blog', position: 'left'}, // Commented out since blog is disabled
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/N3sh47/PowerPack',
           label: 'GitHub',
           position: 'right',
         },
@@ -107,12 +107,12 @@ const config: Config = {
             // { label: 'Blog', to: '/blog' }, // Commented out since blog is disabled
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/N3sh47/PowerPack',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} reserved. ZappySys LLC.`,
     },
     prism: {
       theme: prismThemes.github,
