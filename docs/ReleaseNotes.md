@@ -133,7 +133,7 @@ title: Release Notes
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON / XML / CSV Source, REST API Task - ClientCertificate not supported if you change SslVersion settings other than Default
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON / XML Generator Transform, Export Task - Add option to output nested JSON /XML as encoded string - Set datatype="String" for Unbound `<map>` node (Usecase: MailChimp Bulk API / Azure DevOps Update/Insert)
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Generator Transform, Export JSON Task - Allow Placeholder Function usage for 
-   `<map> tag (e.g. <map src="notes" function="FUN_BASE64ENC" /> `
+   `<map> tag (e.g. <map src="notes" function="FUN_BASE64ENC" /> ` 
    or `function="sometext <<{$value$},FUN_BASE64>> sometext"` in Template mode
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Source - Treat "$" as blank filter
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Source, XML Source, CSV Source - Allow API Connector Wizard to use Column Metadata for new EndPoint in Connector File
@@ -143,3 +143,45 @@ title: Release Notes
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> REST API Task - Allow to continue on Error for multiple status code (e.g. 404|405) - New Property ErrorStatusCodeToMatchRegex
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> REST API Task - Give Options (DisableAutoConvertMultiPartStream and TreatResponseAsMultiPart) to enable / disable multipart detection for stream (Right now we auto detect / convert based on Response Content-Type but no way to enable/disable)
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> REST API Task, JSON / XML / CSV Source - Allow custom content-type in header for MutiPart Upload (e.g. myfilename=@c:\somefile.txt)
+
+### Bug fixes
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> All Components - Dataflow components lose the locked column names when sorts Available Columns (i.e. Click [A-Z] --or-- [Z-A] toolbar button)
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> All Components - Renaming Output Column Name should not break the flow
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Amazon Redshift Data Transfer Task - Throw meaningful error when Source SQL produces blank column name 
+   `(no alias defined for calculated / static data column)`
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connection Manager - Preview works but Test Connection Fails - Embedded API Config Text is empty (Only when you switch to Embedded Mode)
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector - SharePoint - Refresh Columns might throw error in some cases if you Do not supply SiteId at the EndPoint level (Connection Level value is ignored)
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector - Youtube - Embedded Provider selection throws error
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector - YouTube - Improve speed by reducing number of API calls for get_videos (MyVideos Table) - Change Rows Per Page from 2 to 50
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - Allow {$rows$} in Functions for Query Type Parameters for Bulk Lookup
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - Column Name is used instead of Label is used to generate {$rows$} (when LayoutMap not supplied)
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - Columns with the same Label but Different Name cause an issue (Last column with the same Label takes precedence)
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - Common Properties (e.g. Label, Desc, HelpLink) always take precedence from Template rather than node override
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - Duplicate Column Name in Dynamic Template causes an issue (Static Column added at EndPoint level and the same found in Dynamically Expanded)
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - generic_request endpoint is not working when you use Partial URL starts with slash (e.g. /customers) or Full URL (http://abc.com/customers)
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - If Service URL contains a variable e.g. (https://[$Domain$].zendesk.com) then some bulk endpoints (e.g. BULK Delete / Update / Insert - Using Full Job Style URL from Child EndPoint) might fail
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - MaxRows Settings not working for ChildEndPoint
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - Paginated request might fail if you use {$rows$} placeholder in URL (it won't replace after the first request)
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - Query Builder on UI might send blank rather than NULL value for Dependency Parameter (OptionEndPointParameters)
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Google Analytics Source - Connection Manager set GA4 in Connection Manager + adding filter in GA Source - getting error on PREVIEW
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Google Analytics Source - ERR_NO_DATA_OR_INVALID_EXPR: No records found in specified table. Manually enter output columns.
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Google Data Connection Manager - You might get JavaScript Error on Generate OAuth Token
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> HTTP Connection Manager - HashSignature Method sometimes throws an error about Position if you use [$url-part-zzz-x-y$] placeholder in HashSignatureFormat
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Http Connection Manager - JTW token Claims not loaded on UI after save
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> JSON / XML / CSV Source - API Connector File Wizard doesn't add PagingByUrlCurrentPage Property if PagingMode set to URLPath Mode or ByPostData mode
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> JSON / XML / CSV Source - API Connector Wizard Saves Headers as XML rather than Raw format in the final connector file
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> JSON / XML / CSV Source - Pagination Mode - ByResponseHeaderRfc5988 - Fails in some cases (e.g. ServiceNow API)
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> JSON Generator Transform - Output as array node not persisted on UI for unbound node
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> JSON Source - API Connector Wizard should set PageStartVariable automatically when Variable is set
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> JSON Source, XML Source - Pagination doesn't stop (goes into an infinite loop) when you have Error Output attached
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> JSON Source, XML Source - When Suffix used with a question mark it doesn't wipe out original parameters from the URL as indicated in the help
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> OAuth - Vsts Provider - response_type sent twice
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> OAuth Connection - If Password / ClientCredentials Grant used and RefreshToken is returned in response then sometimes it may fail request with Unauthorized (due to blank AccessToken)
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> OAuth Connection Manager, API Connection - Use SaveAs dialog rather than Open for Refreshtoken file path
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> REST API Task, JSON / XML Source / Web API Destination - Multi-Part Content Response may throw an error - startIndex cannot be larger than length of the string. Parameter name: startIndex (This only happens if two new lines found before the first boundary)
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Upsert Destination - Cannot select Custom Order By dropdown when Duplicate Handling is changed (it's always disabled) - You can use Properties window to change it but not via UI
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> XML / CSV Source - API Connector Wizard doesn't set EndPoint ResponseFormat=Xml or Csv
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> XML Source - You might get an error about Could not find my.dtd file when 
+   `&lt;!DOCTYPE my.dtd&gt;` tag found in the XML file (Preview works fine but runtime fails)
+
+
