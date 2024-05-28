@@ -78,4 +78,4 @@ title: Release Notes
 ---
 ### New Features/Improvements
 
-   - <span style={{ color: '#00971D' }}>NEW:</span> API Connector - CosmosDB - New connector to Read / Write / Query documents and other objects (e.g. Database, Containers)
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - CosmosDB - New connector to Read / Write / Query documents and other objects (e.g. Database, Containers)
