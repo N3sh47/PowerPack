@@ -96,16 +96,16 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'Facebook',
+              href: 'https://www.facebook.com/ZappySys/',
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              href: 'https://twitter.com/zappysys/',
+            },
+            {
+              label: 'Youtube',
+              href: 'https://youtube.com/ZappysysSoft/',
             },
           ],
         },
@@ -113,14 +113,8 @@ const config: Config = {
           title: 'Follow us',
           items: [
             // { label: 'Blog', to: '/blog' }, // Commented out since blog is disabled
-            {
-              label: 'Facebook',
-              href: 'https://www.facebook.com/ZappySys/',
-            },
-            {
-              label: 'X',
-              href: 'https://twitter.com/zappysys/',
-            },
+          
+            
             {
               label: 'LinkedIn',
               href: 'https://www.linkedin.com/company/zappysys/',
@@ -130,8 +124,8 @@ const config: Config = {
               href: 'https://www.pinterest.com/Zappysys/',
             },
             {
-              label: 'Youtube',
-              href: 'https://youtube.com/ZappysysSoft/',
+              label: 'Github',
+              href: 'https://github.com/N3sh47/PowerPack',
             },
           ],
         },
