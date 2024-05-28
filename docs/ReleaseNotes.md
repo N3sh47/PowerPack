@@ -73,3 +73,9 @@ title: Release Notes
    - `FIX:` Salesforce Source - When nested field value is null in first row it may not detected related fields in Query Mode (e.g. Account name null for => SELECT Id, Account.Name from Contact) - Work fine in Preview but Columns Tab (Meta) not listing Account.Name
    - `FIX:` Secure FTP Task - Delete source file after successful transfer option is not working if you check Use Partial extension option
    - `FIX:` Validation Task - File Count property validation throws error - Specified argument was out of range
+
+## Version 5.3.0.10601 [Jul 11, 2023]
+---
+### New Features/Improvements
+
+   - NEW: API Connector - CosmosDB - New connector to Read / Write / Query documents and other objects (e.g. Database, Containers)
