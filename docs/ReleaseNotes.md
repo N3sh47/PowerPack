@@ -133,10 +133,8 @@ title: Release Notes
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON / XML / CSV Source, REST API Task - ClientCertificate not supported if you change SslVersion settings other than Default
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON / XML Generator Transform, Export Task - Add option to output nested JSON /XML as encoded string - Set datatype="String" for Unbound `<map>` node (Usecase: MailChimp Bulk API / Azure DevOps Update/Insert)
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Generator Transform, Export JSON Task - Allow Placeholder Function usage for 
-   
    `<map> tag (e.g. <map src="notes" function="FUN_BASE64ENC" /> `
-   
-   or `function="sometext <<{$value$},FUN_BASE64>> sometext"` in Template mode
+   or function="sometext <<{$value$},FUN_BASE64>> sometext" in Template mode
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Source - Treat "$" as blank filter
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Source, XML Source, CSV Source - Allow API Connector Wizard to use Column Metadata for new EndPoint in Connector File
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Source, XML Source, CSV Source - Include Properties in EndPoint as Default Props when cannot be detected by Wizard as Valid Properties
