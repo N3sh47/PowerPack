@@ -223,4 +223,8 @@ title: Release Notes
    `{$rows$}` function `(Right now it doesnt work if query endpoint rather than Input Rows - usecase like API Destination)`
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow to Read data From Local File - 
    `(Set <EndPoint Url="c:\data\file.json" or ".xml" or ".csv")`
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow to use Png file as Logo
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - CData Property 
+   `(e.g. LayoutMap, Body)` or Property not String Type `(i.e. Int, Bool)` not working if you set in Template as EndPoint Attribute 
+   `(i.e. <EndPoint IncludeParentColumns="True" .... > )`
    
