@@ -261,31 +261,30 @@ title: Release Notes
    `(i.e. KeepFirst and KeepLast )` - Right now we sort on Key column `(we should rather give option to sort on column like LastUpdatedOn)`
 
 
-### Bug fixes
-   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> API Connector Framework - When Direct Placeholder Function used along with 
+### Bug fixes#A2000Ab><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - When Direct Placeholder Function used along with 
    `[$SomeParam$]` in ValueTemplate of InputColumn then it doesn't evaluate for each row `(Using Cached Value rather than Row By Row)` - Example `[$p1]<<{$value$},FUN_BASE64ENC>>`
 
-   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> API Connector Framework - When nested column under Unbound node found in LayoutMap not supplied you may see bad JSON created
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - When nested column under Unbound node found in LayoutMap not supplied you may see bad JSON created
 
-   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> API Connector Framework - Zendesk - When you don't supply requestor / comment your create Ticket call might fail
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - Zendesk - When you don't supply requestor / comment your create Ticket call might fail
 
-   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> API Destination - For Bulk Operation becomes row by row after first request
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Destination - For Bulk Operation becomes row by row after first request
 
-   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> CSV Source - Issue in output while Carriage Return 
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> CSV Source - Issue in output while Carriage Return 
    `(CR)` inside the double quote
 
-   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> General - Improve Machine Registration
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> General - Improve Machine Registration
 
-   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> JSON Source - URL Parameter Pagination mode fails in some cases when API doesn't under + as encoded value for space and user supply encoded space in query 
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> JSON Source - URL Parameter Pagination mode fails in some cases when API doesn't under + as encoded value for space and user supply encoded space in query 
    `(e.g. http://abc.com?id=AAA%20BBB)`
 
-   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> Licensing - Detect Windows 11 as Desktop OS rather than Server OS
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Licensing - Detect Windows 11 as Desktop OS rather than Server OS
 
-   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> OAuth Connection Manager - AWS V4 Provider - Variable Placeholder cause issue in HMAC Signature
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> OAuth Connection Manager - AWS V4 Provider - Variable Placeholder cause issue in HMAC Signature
 
-   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> Reporting Services Task - If Send Email / Export File Fails then temp file is not deleted
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Reporting Services Task - If Send Email / Export File Fails then temp file is not deleted
 
-   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> Secure FTP Connection Manager - Add an option EnsureKeyAcceptable to handle error like - A public key corresponding to the supplied private key was not accepted by the server or the user name is incorrect 
+   - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Secure FTP Connection Manager - Add an option EnsureKeyAcceptable to handle error like - A public key corresponding to the supplied private key was not accepted by the server or the user name is incorrect 
    `(Send Key First and use UserId, Password Login)`
 
 
