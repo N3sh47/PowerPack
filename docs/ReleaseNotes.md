@@ -707,7 +707,7 @@ title: Release Notes
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> JSON Source, XML Source, CSV Source - Pagination from Custom Header throwing error if you use EnablePageTokenForBody 
 `(i.e. use of [$pagetoken$] in body)`
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> OAuth Connection Manager - Bad Token is cached and not cleared in some cases after you generate token
-- <b><span style={{ color: '#A2000A' }}>FIX: OAuth Connection Manager - When using Full Browser to get refresh token it may fail with 400 Bad request in some cases due to handling of special chars in code (i.e. %2F, %2B)
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> OAuth Connection Manager - When using Full Browser to get refresh token it may fail with 400 Bad request in some cases due to handling of special chars in code (i.e. %2F, %2B)
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> PostgreSQL Connection Manager - Retain connection setting throws error if connection is reused in the package
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> PostgreSQL Connection Manager - TCP keep alive timer might crash with default (0) value on certain machines
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> REST API Task, JSON, XML, CSV Source - POST Call - Upload large file might fail with OutOfMemory Exception (2GB or larger)
@@ -715,13 +715,14 @@ title: Release Notes
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Secure FTP Task - Get Folder list doesn't fetch all subfolders in the recursive scan
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Secure FTP Task - Get Folder list doesn't fetch folders if path doesnt end with slash at the end
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Secure FTP Task - Get Folder list doesn't work on the Root folder
-- <b><span style={{ color: '##A2000A' }}>FIX:</span></b> XML Source, XML Parser Transform - Detect 0001 or +18001231122 as string rather than integer (Plus sign can be used in Phone number field)
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> XML Source, XML Parser Transform - Detect 0001 or +18001231122 as string rather than integer (Plus sign can be used in Phone number field)
 
 ## Version 4.1.2.10520 [May 21, 2021]
 ---
 
 
 ### New Features/Improvements
+
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Google Sheets - Add support for Tables (Tabs now listed as Tables)
 
 ### Bug fixes
@@ -730,7 +731,10 @@ title: Release Notes
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> REST API Task - Validation error is not reset after fixing it
 
 ## Version 4.1.1.10513 [May 19, 2021]
-- <b><span style={{ color: '#00971D' }}>New Features/Improvements
+---
+
+### New Features/Improvements
+
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Sharepoint Online - Read/write List data, Download Files, Upload Files
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Engine - Add an option to replace Dynamic Expand Table parameters
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Engine - Allow to detect datatypes from property name
@@ -744,6 +748,7 @@ title: Release Notes
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> OAuth Connection Manager - Add Support for Google Service Account (using p12 file)
 
 ### Bug fixes
+
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Amazon S3 JSON, XML, CSV File Source Task - Connection dropdown overlapping with Label
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connection Manager - Test Connection fails to use new Token
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Engine - Connection level parameter value not used by EndPoint when same parameter defined without value
@@ -751,4 +756,4 @@ title: Release Notes
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Engine - Multi Select Parameter is not correctly decoded when Value is read
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Source, API Destination - UI Validation doesnt happen for destination, For Source throws error about required parameter even though some value supplied either in connection parameters / other overrides
 - <b><span style={{ color: '#A2000A' }}>FIX: HTTP Connection Manager - When your body is coming from File and you have used 
-`[$body-hash-xxxxxx$]` placeholder in HMAC / HASH Authentication it doesnt work   
+`[$body-hash-xxxxxx$]` placeholder in HMAC / HASH Authentication it doesnt work  
