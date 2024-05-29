@@ -617,7 +617,8 @@ title: Release Notes
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector - Zendesk - Bulk delete and get_tickets_by_ids operation might fail at runtime when used in Destination
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector - Zoho CRM - Bulk delete operation might fail to execute
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - Allow option to define MetaDetectionOrder as MergeStaticDynamic (Use Both Static and Dynamic Columns detected from Guess Rows - Static takes precedence if same name found in dynamic list)
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Destination - Mapped Parameters for some bulk endpoint is treated as row by row operation (e.g. Zendesk get_tickets_by_ids with {$rows$} function)
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Destination - Mapped Parameters for some bulk endpoint is treated as row by row operation 
+`(e.g. Zendesk get_tickets_by_ids with {$rows$} function)`
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Source, API Destination - Custom Parameters are not Saved with other parameters
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Source, API Destination - Hide any Endpoint which needs 
 `{$row$}` input at runtime
@@ -637,10 +638,12 @@ title: Release Notes
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> JSON Generator Transform, Export JSON Task - Use of Placeholder Functions not working in static element value
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> JSON Source - Create new connector file Wizard exits without saving no matter the user response to the confirmation message
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> MongoDB Connection - ReadConcern property is not load / save correctly
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> OAuth Connection Manager - Unable to cast object of type 'Rebex.Net.HttpResponse' to type 'System.Net.HttpWebResponse
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> OAuth Connection Manager - Unable to cast object of type 
+`'Rebex.Net.HttpResponse'` to type `'System.Net.HttpWebResponse`
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> OAuth Connection Manager - Paginated requests may fail for Client_Credentials or Password grant for long operations (due to expired token which is not renewed)
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> OAuth eBay Sandbox API - OAuth fails with 404 Error
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> PostgreSql Source - You might get Error on DT_NUMERIC type sometimes - Error: The "%1" has a precision that is not valid. The precision must be between %2!ld and %3!ld!
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> PostgreSql Source - You might get Error on DT_NUMERIC type sometimes - Error: The "%1" has a precision that is not valid. The precision must be between 
+`%2!ld and %3!ld!`
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> REST API Task, JSON, XML, CSV Source, Web API Destination - Clearly indicate that Deflate compression needs Tls 1.0 or Higher HTTPS option (Default HTTPS may throw error if server sends compressed data in Deflate Stream with ZLIB Header + Checksum)
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Salesforce Connection Manager - Timeout Property is not used correctly
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Upsert Destination - Preview function reads entire table rather than sample rows
