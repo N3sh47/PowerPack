@@ -755,5 +755,5 @@ title: Release Notes
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Engine - Loading Blank Label for Expand Column can set blank name for column
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Engine - Multi Select Parameter is not correctly decoded when Value is read
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Source, API Destination - UI Validation doesnt happen for destination, For Source throws error about required parameter even though some value supplied either in connection parameters / other overrides
-- <b><span style={{ color: '#A2000A' }}>FIX: HTTP Connection Manager - When your body is coming from File and you have used 
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> HTTP Connection Manager - When your body is coming from File and you have used 
 `[$body-hash-xxxxxx$]` placeholder in HMAC / HASH Authentication it doesnt work  
