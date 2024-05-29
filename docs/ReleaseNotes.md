@@ -529,3 +529,111 @@ title: Release Notes
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> DynamoDB Source - Runtime returns zero records in some cases while preview returns fine
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> JSON, XML, CSV Source - When you enable PageToken for Body (Advanced Pagination Options) - You may get error if you keep PagePlaceholders blank - System.NullReferenceException: Object reference not set to an instance of an object
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Salesforce Destination - Regional Settings where decimal is comma cause error - 'NNN,NNNN' is not valid for the type xsd:double
+
+
+## Version 4.2.0.10201 [Feb 02, 2022]
+---
+
+### New Features/Improvements
+
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connection Manager - Add Support for RefreshTokenFilePath
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - DropBox - New connector to read / write data to DropBox (Upload, Download, Delete, List)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - ElasticSearch - New connector to read / write / query data from ElasticSearch Cluster
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Api Connector - Google Calendar - New connector to read / write calendar data / events from google calendar service
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Google Drive - Update upload endpoint to support chunked upload (Support large files > 200MB)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Google Driver - Changed requirements to use Engine v3
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - HubSpot - New connector to read / write data to HubSpot CRM
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - OneDrive - New connector to read / write data to OneDrive (Upload, Download, Delete, List)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Engine - Add support for Key Property for Property Type Parameter
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Engine - Provide an option (MultiSelectAllOnBlank) to Select All Values when no value supplied by user
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Engine - Provide an option MaxRequestSize to override BatchSize if request goes more than allowed size
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Add IncludePivotPath property for EnablePivot option along with EnablePivotPathSearchReplace, PivotPathSearchFor, PivotPathReplaceWith
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Add Support for Byte Stream Split (e.g. Handle support for OneDrive Upload larger than 4MB with Content-Range)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Add Support for DocumentHeader / Footer, RowHeader / Footer and AllowHeaderRowAppendForNonEmptyFile (ElasticSearch API - Insert Document Usecase)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Add support for Parameter placeholders in ValueTemplate
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow Parameters to be used inside LayoutMap
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow to map __RAWDOC__
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow to override / mix EndPoint Columns with template columns, order Endpoint columns before template columns using Order attribute
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow to pass columns as fragment 
+`(use raw: prefix e.g. raw::mycolumn )` - Useful to build document for `{$Rows$}`
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow to use Parameter value inside InputColumn ValueTemplate
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Expose RetryInfo related properties for endpoint (it takes precedence over Connection Level RetryInfo)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - New attribute ExcludeFromRowMap for InputColumn tag to exclude certain columns to be allowed in RowHeader/Footer/URL/Body but not considered in Map 
+`(i.e. Usage of {$Row$} placeholder)`
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - New attribute MapToParam for InputColumn (Useful for supporting key in UPDATE/ DELETE WHERE clause) - Allows to Map InputColumn to Parameter 
+`( <Column Name="ParamCustId" Label="CustId" MapToParam="True")`
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> CSV Source, CSV Parser - Provide an option to output blank value as null for certain columns
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Dynamics CRM - Add Support for Azure AD App (OAuth App) Client Id / Secret (Needed to support Modern Security with MFA / 2FA )
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Export Excel Task - Allow to use multi line SQL Statements for Template based export in dataset SQL 
+`(i.e. ds1=some sql1; some sql2 | ds2=some sql... )`
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Export JSON, XML, CSV Task - Allow multiple characters in SourceSplitChar Property to allow multiple SQL Statements (i.e. || rather than | )
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Add new output format (unix_timestamp and unix_timestamp_ms) in all DateTime Place holder functions (i.e. <<unix_timestamp,FUN_NOW>> or <<now||unix_timestamp,FUN_TO_DATE>> )
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Allow to turn off new version check 
+`(Add Never Show Option)`
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Place holder function FUN_IF_NULL 
+`( Syntax: input_value { |~| template_for_null_input } { |~| template_for_non_null_input } {|~| value_encoding_style } )` , Example: `{{User::Notes |~| Input is null |~| Input is $1 |~| jsonenc , FUN_IF_NULL}}`
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Place holder functions FUN_IF_NULL, FUN_IF_EMPTY, FUN_IF_NULL_OR_EMPTY 
+`( Syntax: input_value { |~| template_for_null_input } { |~| template_for_non_null_input } {|~| value_encoding_style } )`
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Show warning about Purchased license key activation on Trial Build to avoid confusion
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> HTTP Connection Manager - Add option for Hawk Authentication
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> HTTP Connection Manager - HMAC /HASH add option to remove portion of StringToSign on 
+`<<-rbbb| ,hash=[$body-hash-sha256$] |-rbbb>> (i.e. anything between <<-rbbb| and |-rbbb>> is removed if body is blank - including region boundary)`
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> HTTP Connection Manager - HMAC /HASH allow to generate blank hash if body is blank 
+`(e.g.[$body-hash-sha256-rbbb$] adding -rbbb will invoke return blank hash on blank body (By default hash of empty body is generated)`
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> HTTP Connection Manager, OAuth Connection Manager - Allow retry on status code lower than 400 (e.g. Allow to retry on 202 status code)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> INTERNAL - Upgrade to Newtonsoft JSON 12.0.3
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Json Source, XML Source, CSV Source - Allow to cancel infinite pagination on UI Save
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Source, XML Source, CSV Source / Parser Transform - Add Option to parse output from command line Standard Output Stream 
+`(e.g. cmd:>curl -k http://httpbin.org/get)`
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Source, XML Source, Parser Transform - Allow Regular Expression in Filter 
+`(e.g. $.store.books[?(@author =~ /^sam$/ )]`
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> OAuth Connection Manager - Add an option RenewBeforeSec to support APIs like exactonline which will reject renew token call if made too early (Current we hardcoded 300 seconds)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> REST API Task - Give option to Upload Very Large file using Chunked Upload (Content-Range / Split Stream)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Salesforce Connection Manager - Add support for OAuth Access Token (Helpful for 2FA / MFA )
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Salesforce Destination, Dynamics CRM Destination - Report Progress every N rows also Report row count summary at the end (i.e. Total Rows=nnn, Inserted = nnn, Updated=nnn, Deleted=nnn, Error=nnn, Time Took=nn:nn:nn.nnn )
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Salesforce Source - Provide steps to read data using BULK API for large dataset (Table / SOQL Query)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Upsert Destination - Add support for update by comparing actual row content rather than just key (only update if content is different)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Upsert Destination - Allow to Set Created Date/Time to user defined column for Insert action
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Upsert Destination - Allow to Set Last Updated Date/Time to user defined column for Update action
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Upsert Destination - Provide an option to control Lock Hints (Expose Custom Hints option on advanced tab)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Upsert Destination, PostgreSql Destination, Redshift Destination - Provide truncation warning during validation if data length mismatch occur between source and destination
+
+
+### Bug fixes
+
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connection Manager - Proxy Info , Certificate Info, Error Retry Info settings not used at runtime
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector - Google BigQuery - Insert Request fails if you have long string data (batch size > 10MB) - Error: Unable to write data to the transport connection: An existing connection was forcibly closed by the remote host.
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector - Zendesk - Bulk delete and get_tickets_by_ids operation might fail at runtime when used in Destination
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector - Zoho CRM - Bulk delete operation might fail to execute
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - Allow option to define MetaDetectionOrder as MergeStaticDynamic (Use Both Static and Dynamic Columns detected from Guess Rows - Static takes precedence if same name found in dynamic list)
+- <b><span style={{ color: '#A2000A' }}>FIX: API Destination - Mapped Parameters for some bulk endpoint is treated as row by row operation (e.g. Zendesk get_tickets_by_ids with {$rows$} function)
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Source, API Destination - Custom Parameters are not Saved with other parameters
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Source, API Destination - Hide any Endpoint which needs 
+`{$row$}` input at runtime
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Azure Table Storage - Timestamp column removes millisecond part
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> CSV Generator Transform - Use of Placeholder Functions not working in static element value
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> CSV Source, JSON Source - Showing misleading warning about too large XML file
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Excel Destination Task - Headers are skipped from 2nd iteration while writing to an excel file in the loop container
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Excel Source - When duplicate column names found you may see error - "An item with the same key has already been added"
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Export Excel Task - Using Report Template option with whitespace around Dataset name alias might cause error - The named range "__zzzzz__" on the Excel template refers to DataTable "zzzzz" which is not defined
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> General - DocumentHeader, DocumentFooter, RowHeader, RowFooter, RowHeaderFooterContinueOnError should replace column placeholders before any other placeholders (i.e. direct)
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> HTML Email Task - A call to SSPI failed, see inner exception. The function requested is not supported
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> HTTP Connection Manager - HMAC / HASH Method may not calculate signature correctly for Empty Body
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> HTTP Connection Manager - HMAC Authentication may produce wrong signature due to difference in nounce + timestamp sent in header and actual value used to calculate signature
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> HTTP Connection, OAuth Connection, FTP Connection - When RetainSameConnection is set it may return old connection if you are setting connection dynamically in the loop
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> JSON Generator Transform - Static Attributes with value < and > escaped in the json (No need to escape) - Placeholder function FUN_JSONENC / FUN_JSONENCODE does same thing
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> JSON Generator Transform, Export JSON Task - Use of Placeholder Functions not working in static element value
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> JSON Source - Create new connector file Wizard exits without saving no matter the user response to the confirmation message
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> MongoDB Connection - ReadConcern property is not load / save correctly
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> OAuth Connection Manager - Unable to cast object of type 'Rebex.Net.HttpResponse' to type 'System.Net.HttpWebResponse
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> OAuth Connection Manager - Paginated requests may fail for Client_Credentials or Password grant for long operations (due to expired token which is not renewed)
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> OAuth eBay Sandbox API - OAuth fails with 404 Error
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> PostgreSql Source - You might get Error on DT_NUMERIC type sometimes - Error: The "%1" has a precision that is not valid. The precision must be between %2!ld and %3!ld!
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> REST API Task, JSON, XML, CSV Source, Web API Destination - Clearly indicate that Deflate compression needs Tls 1.0 or Higher HTTPS option (Default HTTPS may throw error if server sends compressed data in Deflate Stream with ZLIB Header + Checksum)
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Salesforce Connection Manager - Timeout Property is not used correctly
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Upsert Destination - Preview function reads entire table rather than sample rows
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Upsert Destination - Show Summary of Updated, Inserted, Deleted records along with time it took to process all records
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Upsert Destination - Sometimes you might get very misleading error when data length is larger than target - User might see Error about field '_sortedColumnMappings' not defined'
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Upsert Destination - Sync Upsert + Delete Option not working properly if you set BatchSize > 0 (It only keep last batch and deletes all other records)
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Web API Destination - Reset validation warning if column is selected
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> XML Generator Transform, Export XML Task - Use of Placeholder Functions not working in static element value
