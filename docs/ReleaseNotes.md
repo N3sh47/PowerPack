@@ -435,3 +435,41 @@ title: Release Notes
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - ValueTemplate doesnt work for Query, Body Parameters and also in Input/Output Columns, Also DirectPlaceholder function invoked in wrong order when you use Parameters in ValueTemplate
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> MongoDB Source, Amazon DynamoDB Source, Azure Table Source - Empty Table cause hang at runtime (infinite loop)
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> XML Generator Transform - Date format option is not working
+
+
+## Version 4.2.3.10623 [Jun 25, 2022]
+---
+
+### New Features/Improvements
+
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - SharePoint Online - Add new endpoint get_list_items_dynamic to read complex datatypes (e.g. Lookup, Location) using dynamic metadata - Right now it shows null value with Static Metadata
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> HTTP Connection Manager, OAuth Connection Manager - Expose RetainSameConnection option on the UI
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Source, XML Source, CSV Source - Allow Regular Expression Extract for Paginate using [Response Header Contains Continuation Toke] Mode (e.g. nextHeader=someResponseHeader(your-regular-expression) )
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Source, XML Source, CSV Source - Allow to use different header name for next request for Paginate using [Response Header Contains Continuation Toke] Mode (e.g. header::nextHeader=someResponseHeader )
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Source, XML Source, CSV Source - Paginate using Pass Response Header to Next URL Mode throws error - Specified value has invalid HTTP Header characters
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON, XML, CSV Source, REST API Task, Web API Destination - Add Support for Tls 1.3
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> OAuth Connection Manager - Add support for OAuth 1.0 with SHA256 (Usecase like NetSuite API)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Secure FTP Task - Add support for Ed25519 (EdDSA on edwards25519 curve)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Upsert Destination - Auto map function should normalize name (Remove underscore, space, dot , dash) while matching names to auto map
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Upsert Destination - Mapping Screen Refresh should allow to add new columns rather than reset all
+
+### Bug fixes
+
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Advanced File System Task, Secure FTP Task, Amazon Storage Task, Azure Storage Task - WHERE / Include Regex / Exclude Regex Options not working when you choose Get Latest / Oldest file path option
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - New API Connector Wizard launched from JSON Source wipes out ClientId / Secret in OAuth connection Manager
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Destination - Component gets corrupted when required parameter is mapped and some value supplied for the same mapped param on the UI in parameters grid
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Destination - You may get validation error at design time even if you map required column
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Source - Preview fails on some connectors (i.e. SharePoint) when Auth Parameter Default Value is non-empty and same Parameter on endpoint is empty (i.e. SiteId in SharePoint)
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Compression Task - Invalid or corrupted ZIP archive (Happens in rare case when Header is invalid) - Providing option to skip header check might help
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> DynamoDB Source - Runtime returns different number of rows than preview in some cases (especially new index / partition key defined and you use where clause on it)
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Export CSV Task - Empty Column Delimiter cause error - Index was outside the bounds of the array
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Export CSV, XML, JSON Task - Refresh UI on connection selection so no more validation errors about [Select Connection]
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Export XML Task - Split Options - Enable Split by Size Not working
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> HTML Table Source - BREAKING CHANGE - Trim whitespaces option is not working for numeric columns and column headers 
+`(after updating new version some old columns prefix with space may return NULL data (so just open package / refresh metadata)`
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> JSON Source, XML Source - Pagination not working when End Strategy = Bytes and Response is GZip compressed and Server doesnt return Content-Length header
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> JSON Source, XML Source, CSV Source - For SSIS 2014 and higher - When OAuth Connection is used it ignores SSL / TLS Settings set on Component UI and always use system default SSL Lib
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> OAuth Connection Manager - Option [Do Not Send Credentials in Body] doesnt work (It sends secret in Body regardless)
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Salesforce Source - Preview fails for some Numeric columns
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Upsert Destination - Clicking on Map all may cause key already added error because its trying to map column which is already map
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Upsert Destination - Inner Exception is not included when component fails
