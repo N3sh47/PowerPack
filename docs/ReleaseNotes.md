@@ -611,3 +611,42 @@ title: Release Notes
 
 ### Bug fixes
 
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connection Manager - Proxy Info , Certificate Info, Error Retry Info settings not used at runtime
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector - Google BigQuery - Insert Request fails if you have long string data 
+`(batch size > 10MB)` - Error: Unable to write data to the transport connection: An existing connection was forcibly closed by the remote host.
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector - Zendesk - Bulk delete and get_tickets_by_ids operation might fail at runtime when used in Destination
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector - Zoho CRM - Bulk delete operation might fail to execute
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - Allow option to define MetaDetectionOrder as MergeStaticDynamic (Use Both Static and Dynamic Columns detected from Guess Rows - Static takes precedence if same name found in dynamic list)
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Destination - Mapped Parameters for some bulk endpoint is treated as row by row operation (e.g. Zendesk get_tickets_by_ids with {$rows$} function)
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Source, API Destination - Custom Parameters are not Saved with other parameters
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Source, API Destination - Hide any Endpoint which needs 
+`{$row$}` input at runtime
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Azure Table Storage - Timestamp column removes millisecond part
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> CSV Generator Transform - Use of Placeholder Functions not working in static element value
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> CSV Source, JSON Source - Showing misleading warning about too large XML file
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Excel Destination Task - Headers are skipped from 2nd iteration while writing to an excel file in the loop container
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Excel Source - When duplicate column names found you may see error - "An item with the same key has already been added"
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Export Excel Task - Using Report Template option with whitespace around Dataset name alias might cause error - The named range 
+`"__zzzzz__"` on the Excel template refers to DataTable "zzzzz" which is not defined
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> General - DocumentHeader, DocumentFooter, RowHeader, RowFooter, RowHeaderFooterContinueOnError should replace column placeholders before any other placeholders (i.e. direct)
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> HTML Email Task - A call to SSPI failed, see inner exception. The function requested is not supported
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> HTTP Connection Manager - HMAC / HASH Method may not calculate signature correctly for Empty Body
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> HTTP Connection Manager - HMAC Authentication may produce wrong signature due to difference in nounce + timestamp sent in header and actual value used to calculate signature
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> HTTP Connection, OAuth Connection, FTP Connection - When RetainSameConnection is set it may return old connection if you are setting connection dynamically in the loop
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> JSON Generator Transform - Static Attributes with value < and > escaped in the json (No need to escape) - Placeholder function FUN_JSONENC / FUN_JSONENCODE does same thing
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> JSON Generator Transform, Export JSON Task - Use of Placeholder Functions not working in static element value
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> JSON Source - Create new connector file Wizard exits without saving no matter the user response to the confirmation message
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> MongoDB Connection - ReadConcern property is not load / save correctly
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> OAuth Connection Manager - Unable to cast object of type 'Rebex.Net.HttpResponse' to type 'System.Net.HttpWebResponse
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> OAuth Connection Manager - Paginated requests may fail for Client_Credentials or Password grant for long operations (due to expired token which is not renewed)
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> OAuth eBay Sandbox API - OAuth fails with 404 Error
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> PostgreSql Source - You might get Error on DT_NUMERIC type sometimes - Error: The "%1" has a precision that is not valid. The precision must be between %2!ld and %3!ld!
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> REST API Task, JSON, XML, CSV Source, Web API Destination - Clearly indicate that Deflate compression needs Tls 1.0 or Higher HTTPS option (Default HTTPS may throw error if server sends compressed data in Deflate Stream with ZLIB Header + Checksum)
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Salesforce Connection Manager - Timeout Property is not used correctly
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Upsert Destination - Preview function reads entire table rather than sample rows
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Upsert Destination - Show Summary of Updated, Inserted, Deleted records along with time it took to process all records
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Upsert Destination - Sometimes you might get very misleading error when data length is larger than target - User might see Error about field 
+`'_sortedColumnMappings' not defined'`
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Upsert Destination - Sync Upsert + Delete Option not working properly if you set BatchSize > 0 (It only keep last batch and deletes all other records)
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Web API Destination - Reset validation warning if column is selected
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> XML Generator Transform, Export XML Task - Use of Placeholder Functions not working in static element value
