@@ -473,3 +473,41 @@ title: Release Notes
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Salesforce Source - Preview fails for some Numeric columns
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Upsert Destination - Clicking on Map all may cause key already added error because its trying to map column which is already map
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Upsert Destination - Inner Exception is not included when component fails
+
+## Version 4.2.2.10505 [May 11, 2022]
+---
+
+### New Features/Improvements
+
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Google Drive - Add support for very large large file upload using Split Chunk / Content-Range method
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - SharePoint Online - Added ContinueOn404Error option for get_list_item endpoint (read single list item by ID) to prevent error if ID is bad.
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Zoho - Add retry logic on API limit reached (Status 429)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Add Validation when Source / Destination Error Output is attached but Rather than Redirect its selected something else
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Allow to pass valid datetime as input for TO_DATE / TO_DATETIME function 
+`(e.g. <<2012-12-31,FUN_TO_DATE>> or <<2012-12-31|~|yyyy MM dd,FUN_TO_DATE>> )`
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Provide an option to generate offline key (so you do not have to contact ZappySys Support for offline machine activation)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON, XML, CSV Source / Azure / Amazon / SFTP - Preview doesn't show any data if Recursive Option is checked and file not found on root folder of selected path (Execution at Runtime works fine)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> OAuth Connection Manager - If Changing RefreshTokenFilePath is not empty and if you try to regenerate new token it will not update the file
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> OAuth Connection Manager - Show redirect URL warning if user using Non-ZappySys URL
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> OAuth Connection Manager - Warn user if default browser is set to IE and ask to install Edge/Chrome (Many websites now failed to load in IE so token extraction fails)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> OAuth Connection Manager, Google Data Connection Manager (Google Analytics) - Use Loopback Redirect URL for Custom App to comply with new Google Changes 
+`(Disallow - Redirect to urn:ietf:wg:oauth:2.0:oob for apps created after Feb 2022)`
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Reporting Services Task - Add support for parameters in Local mode
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> REST API Task - Add support for uploading very large files using Content-Range Header (Split Large Stream into chunks)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> REST API Task, HTTP Connection Manager - Allow to extract data from JSON array response using array item index in JSONPath (e.g. [0].some_field ) - on Response Tab (In Task / HTTP Connection- Dynamic Token)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> REST API Task, JSON / XML / CSV Source - Expose MatchForEqual Option for ContineOnErrorForStatusCode [Continue on error with specific response status code] on Error Handling Tab
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> REST API Task, Web API Destination - Add option to allow custom Boundary for Multipart/form-data Upload (Right now we auto generate boundary for each request which may not be accepted by some API)
+
+### Bug fixes
+
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - Parameter with ValueTemplate cause placeholder replacement issue depending on parameter order
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Source, API Destination - Bool datatype is detected as String for Endpoints without Static OutputColumns
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Source, API Destination - Changing refresh token pattern might cause issue on preview data after you click test connection and come back to preview
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> General - DataType Change cause UI crash in Columns Data Grid
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Google Analytics Connection Manager - After Upgrading to new version if you generate new token it might fail at runtime or on Test connection with Authentication Failed error
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> HTTP Connection Manager, OAuth Connection Manager - Show Proxy not available warning if SSL / TLS settings changed other than System Default
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Licensing - Subscription renew doesnt auto apply key if you running SSIS ADF Cluster and main.cmd referring expired key
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Salesforce Source - You may get object reference not set to an instance error if you run many data flows in parallel
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Template Transform - Replace Column Placeholders before Direct / Placeholders Function 
+`(i.e. << <%col1%>,<%col2%>, FUN_HASH_SHA256 >> should replace columns first and then invoke direct placeholder)`
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Web API Destination - [Error output must contain response body] option doesnt work if you set Security Protocol for HTTPS other than Default
