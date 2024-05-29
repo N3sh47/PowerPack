@@ -262,6 +262,7 @@ title: Release Notes
 
 
 ### Bug fixes
+
    - <span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - When Direct Placeholder Function used along with 
    `[$SomeParam$]` in ValueTemplate of InputColumn then it doesn't evaluate for each row `(Using Cached Value rather than Row By Row)` - Example `[$p1]<<{$value$},FUN_BASE64ENC>>`
 
