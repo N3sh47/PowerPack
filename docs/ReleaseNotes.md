@@ -260,3 +260,79 @@ title: Release Notes
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> Upsert Destination - Give option to sort on custom column for Duplicate Handling 
    `(i.e. KeepFirst and KeepLast )` - Right now we sort on Key column `(we should rather give option to sort on column like LastUpdatedOn)`
 
+
+### Bug fixes
+   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> API Connector Framework - When Direct Placeholder Function used along with 
+   `[$SomeParam$]` in ValueTemplate of InputColumn then it doesn't evaluate for each row `(Using Cached Value rather than Row By Row)` - Example `[$p1]<<{$value$},FUN_BASE64ENC>>`
+
+   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> API Connector Framework - When nested column under Unbound node found in LayoutMap not supplied you may see bad JSON created
+
+   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> API Connector Framework - Zendesk - When you don't supply requestor / comment your create Ticket call might fail
+
+   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> API Destination - For Bulk Operation becomes row by row after first request
+
+   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> CSV Source - Issue in output while Carriage Return 
+   `(CR)` inside the double quote
+
+   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> General - Improve Machine Registration
+
+   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> JSON Source - URL Parameter Pagination mode fails in some cases when API doesn't under + as encoded value for space and user supply encoded space in query 
+   `(e.g. http://abc.com?id=AAA%20BBB)`
+
+   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> Licensing - Detect Windows 11 as Desktop OS rather than Server OS
+
+   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> OAuth Connection Manager - AWS V4 Provider - Variable Placeholder cause issue in HMAC Signature
+
+   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> Reporting Services Task - If Send Email / Export File Fails then temp file is not deleted
+
+   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> Secure FTP Connection Manager - Add an option EnsureKeyAcceptable to handle error like - A public key corresponding to the supplied private key was not accepted by the server or the user name is incorrect 
+   `(Send Key First and use UserId, Password Login)`
+
+
+## Version 5.1.0.10109 [Jan 17, 2023]
+---
+
+### New Features/Improvements
+
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Add Support for Visual Studio 2022 SSIS Designer 
+   `(VS2022 x64)`
+
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connection Manager - Sort Connectors by name
+
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Google BigQuery - Add Support for Stored Proc / SQL Query which invokes CRUD / DDL / DML Statements 
+   `(INSERT, UPDATE, DELETE, CREATE, ALTER)`
+
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Google BigQuery - Performance Enhancements for SQL query / Reduce billing unit per query
+
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - HubSpot - Added error retry on status code 429
+
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - OneDrive - Add Retry Option 
+   `(Handle too Many API Calls - Status 429)`
+
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - OneDrive - Give option to force Login Prompt 
+   `(e.g. Similar to Clear login cookies)`
+
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - SharePoint - Add Retry Option 
+   `(Handle too Many API Calls - Status 429)`
+
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - SharePoint - Give option to force Login Prompt 
+   `(e.g. Similar to Clear login cookies)`
+
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Zendesk - Search endpoint fails when more than 1000 records returned 
+   `(Limit of 1000 rows not applied)`
+
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - All Connector Files - Use 429 RetryMode as Property rather than Placeholder
+
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Sort Properties by name in Add New Parameter UI 
+   `(Type=Property)`
+
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Add support for Turkey 
+   `(tr-TR)` and Azerbaijani `(az-Cyrl)` environment
+
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Source - Create new connector option should set Version=1 and latest EngineVersion for New Connector file being created during wizard
+
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> MongoDB Source - Show user friendly message - How to read View if you see - QueryFailure flag was Namespace 5ddeb5exxxxxx_yourDB.yourViewName is a view, not a collection
+
+   - <b><span style={{ color: '#00971D' }}>NEW:</span></b> PostgreSql Source, Excel Source, Redshift Source, API Source - Add Logging for SQL Query / Table name
+
+
