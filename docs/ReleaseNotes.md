@@ -261,7 +261,8 @@ title: Release Notes
    `(i.e. KeepFirst and KeepLast )` - Right now we sort on Key column `(we should rather give option to sort on column like LastUpdatedOn)`
 
 
-### Bug fixes#A2000Ab><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - When Direct Placeholder Function used along with 
+### Bug fixes
+   - <span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - When Direct Placeholder Function used along with 
    `[$SomeParam$]` in ValueTemplate of InputColumn then it doesn't evaluate for each row `(Using Cached Value rather than Row By Row)` - Example `[$p1]<<{$value$},FUN_BASE64ENC>>`
 
    - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - When nested column under Unbound node found in LayoutMap not supplied you may see bad JSON created
