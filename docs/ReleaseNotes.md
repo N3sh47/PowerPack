@@ -337,3 +337,38 @@ title: Release Notes
    - <b><span style={{ color: '#00971D' }}>NEW:</span></b> PostgreSql Source, Excel Source, Redshift Source, API Source - Add Logging for SQL Query / Table name
 
 
+### Bug fixes
+
+   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> API Connection Manager - Authentication help link doesn't show popup help in some cases
+
+   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> API Connection Manager - Connection Parameter Grid uses old connection to make DataEndPoint calls
+
+   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> API Connection Manager - Embedded Dropdown option for Amazon Ads Connector not working
+
+   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> API Connector - Google BigQuery - You might get duplicate rows in some cases (when query is not cached in BQ)
+
+   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> API Connector Framework - Dynamic Endpoints are expanded on test connection (Usecase: SharePoint Connector uses root site - Causing Unauthorized Error)
+
+   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> API Connector Framework - Generic_Request EndPoint doesn't work correctly when you supply Body or Headers
+
+   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> API Connector Framework - String value with slash ( \ ) or double quote ( " ) cause issue in Insert, Update, Delete operations
+
+   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> Export XML Task - UpperCase not allowed in NameSpace Prefix (i.e. nsA=http://xyz) - You get error prefix not declared
+
+   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> General - Placeholder engine doesn't work in some cases when regional settings set to non-English (e.g. Turkish tr-TR)
+
+   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> JSON Driver, XML Driver - When nested filter used (e.g. $.customers[*].orders) along with IncludeParentColumns option not working sometimes (Throws error or shows wrong value for parent column)
+
+   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> JSON Source - JSONPath expression with 
+   `$.customers[*].orders` can throw error if mixed case detected for array and object for the same property and you check IncludeParentColumns `(e.g. orders: [ {...},{...} ] --OR-- orders: {...} )`
+
+   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> JSON Source - Key Not found exception at runtime when Output as Raw Document Enabled and Include Parent is checked
+
+   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> JSON Source - Pagination with NextUrlFromAttribute and NextLink Cursor does not encode variable placeholder
+
+   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> JSON Source - Parent column value not correct when nested array filter used in JSONPath 
+   `(e.g. $.customers[].orders[])` - This can happen in Raw Output option too
+
+   - <b><span style={{ color: '#00971D' }}>FIX:</span></b> JSON Source - Performance Improvement (when include parent column checked)
+
+
