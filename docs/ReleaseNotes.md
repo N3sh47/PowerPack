@@ -388,3 +388,50 @@ title: Release Notes
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> All Components - Mapping file export does not encode special characters like "&" which cause issue with import same file throwing error - An error occurred while parsing EntityName. Line XX, position YY.
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector - Stripe - Update endpoints to for date time as input / output rather than Unix timestamp
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - Some properties like Functions, ValueTemplate, Order, Label etc doesnt work in Param Template
+
+## Version 5.0.0.11017 [Oct 18, 2022]
+---
+
+### New Features/Improvements
+
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Add support for SQL Server 2022
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Youtube - New connector to read, search Videos / Playlists and other information (like, view, share, title, watch time etc)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Stripe - New connector to read / write Customers, Orders, Invoices, Products, Subscriptions and more
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Zoom - New connector to read Meetings, Webinars, Attendees and other information from Zoom Service
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Amazon Ads - New connector to read reports for Amazon Ads Account
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - ManageEngine ServiceDesk Plus- New Connector to read data from Requests, Tasks, Notes, Worklog and more
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Advanced File System Task - Add Support for 
+`{%name_before_dot%}, {%filenum%}, {%totalfiles%}, {%timestamp%}` placeholders
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Google BigQuery - Add retry on 429 status code (currently its only on 403)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Google Calendar - Add retry on 429 status code (currently its only on 403)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Google Drive - Add retry on 429 status code (currently its only on 403)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Google Sheets - Add retry on 429 status code (currently its only on 403)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - HubSpot - Add support for PrivateApp Authentication (Using Static Access Token)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - SharePoint - Added support for Lookup fields and added 
+`<FieldName>` LookupId columns (numeric id) to know referenced row. Also added expand parameter with selection to expand selected fields only
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Zendesk - Add support for comment on existing ticket / added support for HTML Comment
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Provide an option MultiSelectAllOnDefault - If default value supplied for parameter then invoke Select All
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Provide LayoutMap and 
+`{$rows$}` for ChildEndPoint (Useful to pass parent URL ids in Batch to child URL)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Show better message when Trial Registration failed in ADF due to Firewall blocking license service call
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> HTTP Connection Manager - Password with special characters (i.e. greater than / less than sign) cause issue in WSS Method (it needs encoding)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Generator, XML Generator, Export Tasks - Add additional date formats in date format selection
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Source - Provide a way to supply different HTTP METHOD (verb) for Changing Pagination method (2nd page has different verb) - ConstantContact API usecase
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> PostgreSql Destination - Add Support for Array Type 
+`(i.e. text[ ], integer[ ] )`
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> PostgreSql Source - Add Support for Array Type 
+`(i.e. text[ ], integer[ ] )`
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Secure FTP Connection Manager - Add an option to avoid errors with older server - Data connection cannot be opened with this PROT setting (521)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Secure FTP Task - For Rename File Operation - add Support for 
+`{%name_before_dot%}, {%filenum%}, {%totalfiles%}, {%timestamp%}` placeholders
+
+
+### Bug fixes
+
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connection Manager - OAuth Generate Token button remains disabled in some cases also not showing count down
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - Columns from Base Template not working
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - Hidden Parameters not passed correctly to OptionEndPoint
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - Table Level Parameters not used from ODBC
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - ValueTemplate doesnt work for Query, Body Parameters and also in Input/Output Columns, Also DirectPlaceholder function invoked in wrong order when you use Parameters in ValueTemplate
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> MongoDB Source, Amazon DynamoDB Source, Azure Table Source - Empty Table cause hang at runtime (infinite loop)
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> XML Generator Transform - Date format option is not working
