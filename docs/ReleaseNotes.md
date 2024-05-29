@@ -540,34 +540,44 @@ title: Release Notes
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - DropBox - New connector to read / write data to DropBox (Upload, Download, Delete, List)
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - ElasticSearch - New connector to read / write / query data from ElasticSearch Cluster
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> Api Connector - Google Calendar - New connector to read / write calendar data / events from google calendar service
-- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Google Drive - Update upload endpoint to support chunked upload (Support large files > 200MB)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Google Drive - Update upload endpoint to support chunked upload 
+`(Support large files > 200MB)`
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Google Driver - Changed requirements to use Engine v3
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - HubSpot - New connector to read / write data to HubSpot CRM
-- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - OneDrive - New connector to read / write data to OneDrive (Upload, Download, Delete, List)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - OneDrive - New connector to read / write data to OneDrive 
+`(Upload, Download, Delete, List)`
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Engine - Add support for Key Property for Property Type Parameter
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Engine - Provide an option (MultiSelectAllOnBlank) to Select All Values when no value supplied by user
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Engine - Provide an option MaxRequestSize to override BatchSize if request goes more than allowed size
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Add IncludePivotPath property for EnablePivot option along with EnablePivotPathSearchReplace, PivotPathSearchFor, PivotPathReplaceWith
-- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Add Support for Byte Stream Split (e.g. Handle support for OneDrive Upload larger than 4MB with Content-Range)
-- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Add Support for DocumentHeader / Footer, RowHeader / Footer and AllowHeaderRowAppendForNonEmptyFile (ElasticSearch API - Insert Document Usecase)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Add Support for Byte Stream Split 
+`(e.g. Handle support for OneDrive Upload larger than 4MB with Content-Range)`
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Add Support for DocumentHeader 
+`/ Footer, RowHeader / Footer and AllowHeaderRowAppendForNonEmptyFile (ElasticSearch API - Insert Document Usecase)`
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Add support for Parameter placeholders in ValueTemplate
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow Parameters to be used inside LayoutMap
-- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow to map __RAWDOC__
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow to map 
+`__RAWDOC__`
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow to override / mix EndPoint Columns with template columns, order Endpoint columns before template columns using Order attribute
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow to pass columns as fragment 
 `(use raw: prefix e.g. raw::mycolumn )` - Useful to build document for `{$Rows$}`
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Allow to use Parameter value inside InputColumn ValueTemplate
-- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Expose RetryInfo related properties for endpoint (it takes precedence over Connection Level RetryInfo)
-- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - New attribute ExcludeFromRowMap for InputColumn tag to exclude certain columns to be allowed in RowHeader/Footer/URL/Body but not considered in Map 
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - Expose RetryInfo related properties for endpoint 
+`(it takes precedence over Connection Level RetryInfo)`
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - New attribute ExcludeFromRowMap for InputColumn tag to exclude certain columns to be allowed in 
+`RowHeader/Footer/URL/Body` but not considered in Map 
 `(i.e. Usage of {$Row$} placeholder)`
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Framework - New attribute MapToParam for InputColumn (Useful for supporting key in UPDATE/ DELETE WHERE clause) - Allows to Map InputColumn to Parameter 
 `( <Column Name="ParamCustId" Label="CustId" MapToParam="True")`
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> CSV Source, CSV Parser - Provide an option to output blank value as null for certain columns
-- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Dynamics CRM - Add Support for Azure AD App (OAuth App) Client Id / Secret (Needed to support Modern Security with MFA / 2FA )
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Dynamics CRM - Add Support for Azure AD App 
+`(OAuth App) Client Id / Secret (Needed to support Modern Security with MFA / 2FA )`
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> Export Excel Task - Allow to use multi line SQL Statements for Template based export in dataset SQL 
 `(i.e. ds1=some sql1; some sql2 | ds2=some sql... )`
-- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Export JSON, XML, CSV Task - Allow multiple characters in SourceSplitChar Property to allow multiple SQL Statements (i.e. || rather than | )
-- <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Add new output format (unix_timestamp and unix_timestamp_ms) in all DateTime Place holder functions (i.e. <<unix_timestamp,FUN_NOW>> or <<now||unix_timestamp,FUN_TO_DATE>> )
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Export JSON, XML, CSV Task - Allow multiple characters in SourceSplitChar Property to allow multiple SQL Statements 
+`(i.e. || rather than | )`
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Add new output format (unix_timestamp and unix_timestamp_ms) in all DateTime Place holder functions 
+`(i.e. <<unix_timestamp,FUN_NOW>> or <<now||unix_timestamp,FUN_TO_DATE>> )`
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Allow to turn off new version check 
 `(Add Never Show Option)`
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Place holder function FUN_IF_NULL 
@@ -615,7 +625,8 @@ title: Release Notes
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> CSV Source, JSON Source - Showing misleading warning about too large XML file
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Excel Destination Task - Headers are skipped from 2nd iteration while writing to an excel file in the loop container
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Excel Source - When duplicate column names found you may see error - "An item with the same key has already been added"
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Export Excel Task - Using Report Template option with whitespace around Dataset name alias might cause error - The named range "__zzzzz__" on the Excel template refers to DataTable "zzzzz" which is not defined
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Export Excel Task - Using Report Template option with whitespace around Dataset name alias might cause error - The named range 
+`"__zzzzz__"` on the Excel template refers to DataTable "zzzzz" which is not defined
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> General - DocumentHeader, DocumentFooter, RowHeader, RowFooter, RowHeaderFooterContinueOnError should replace column placeholders before any other placeholders (i.e. direct)
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> HTML Email Task - A call to SSPI failed, see inner exception. The function requested is not supported
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> HTTP Connection Manager - HMAC / HASH Method may not calculate signature correctly for Empty Body
@@ -633,7 +644,8 @@ title: Release Notes
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Salesforce Connection Manager - Timeout Property is not used correctly
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Upsert Destination - Preview function reads entire table rather than sample rows
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Upsert Destination - Show Summary of Updated, Inserted, Deleted records along with time it took to process all records
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Upsert Destination - Sometimes you might get very misleading error when data length is larger than target - User might see Error about field '_sortedColumnMappings' not defined'
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Upsert Destination - Sometimes you might get very misleading error when data length is larger than target - User might see Error about field 
+`'_sortedColumnMappings' not defined'`
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Upsert Destination - Sync Upsert + Delete Option not working properly if you set BatchSize > 0 (It only keep last batch and deletes all other records)
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Web API Destination - Reset validation warning if column is selected
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> XML Generator Transform, Export XML Task - Use of Placeholder Functions not working in static element value
