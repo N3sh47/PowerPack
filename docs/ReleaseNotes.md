@@ -511,3 +511,21 @@ title: Release Notes
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Template Transform - Replace Column Placeholders before Direct / Placeholders Function 
 `(i.e. << <%col1%>,<%col2%>, FUN_HASH_SHA256 >> should replace columns first and then invoke direct placeholder)`
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Web API Destination - [Error output must contain response body] option doesnt work if you set Security Protocol for HTTPS other than Default
+
+## Version 4.2.1.10302 [Mar 08, 2022]
+---
+
+## New Features/Improvements
+
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Add SiteId parameter to Sharepoint connector, Upload file endpoint
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - JIRA - Add columns to display custom fields with multi select values
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Zendesk - Added Retry for API Limit errors
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Source, XML Source, CSV Source - Clearly mention on UI when and how 
+`[$pagetoken$]` anb `[$pagenumber$]` can be used in Body
+
+### Bug fixes
+
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector - Zendesk - Read Tickets (Incremental) doesnt stop pagination
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> DynamoDB Source - Runtime returns zero records in some cases while preview returns fine
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> JSON, XML, CSV Source - When you enable PageToken for Body (Advanced Pagination Options) - You may get error if you keep PagePlaceholders blank - System.NullReferenceException: Object reference not set to an instance of an object
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Salesforce Destination - Regional Settings where decimal is comma cause error - 'NNN,NNNN' is not valid for the type xsd:double
