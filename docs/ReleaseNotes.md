@@ -689,7 +689,7 @@ title: Release Notes
 - <b><span style={{ color: '#00971D' }}>FIX:</span></b> API Connector Engine - Detect 0001 or +18001231122 as string rather than integer (Plus sign can be used in Phone number field)
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Source, API Destination - Saving Mappings after searching removes other mappings
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Azure Storage Connection Manager - SAS URL is not Authenticating and throwing error "403 Server failed to authenticate the request" - Specially when Exists method is invoked on Container
-- <b><span style={{ color: '#0#A2000A' }}>FIX:</span></b> Dynamics CRM Connection Manager - When you click on Organization dropdown - You may receive Error - FCB 'EnableRegionalDisco' is disabled
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Dynamics CRM Connection Manager - When you click on Organization dropdown - You may receive Error - FCB 'EnableRegionalDisco' is disabled
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Dynamics CRM Destination - Give clear message when Lookup Entity Cache is invoked and duplicate row found for same text (when you set by text)
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Excel Destination - PreserveFormatting=True cause error - Invalid Cell: "A1:@0" if target sheet is blank
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Excel Source - Detect 0001 or +18001231122 as string rather than integer (Plus sign can be used in Phone number field)
