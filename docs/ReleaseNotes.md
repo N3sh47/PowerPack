@@ -653,3 +653,102 @@ title: Release Notes
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Upsert Destination - Sync Upsert + Delete Option not working properly if you set BatchSize > 0 (It only keep last batch and deletes all other records)
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Web API Destination - Reset validation warning if column is selected
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> XML Generator Transform, Export XML Task - Use of Placeholder Functions not working in static element value
+
+
+
+## Version 4.1.3.10907 [Sep 09, 2021]
+---
+
+### New Features/Improvements
+
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Google Drive - New connector for manage, list, upload, download files
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Engine - Add EndPoint attribute OutputHeaders to support extracting Response headers in output row like data columns
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Engine - Add File Download support for EndPoint tag (two new properties as parameters - FileSavePath, FileOverwriteMode )
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Engine - Add FileSave, FileOpen editors for Parameter Attribute Editor
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Engine - Add Target Property to prevent Parameter Push down to Child EndPoint or invoke for a specific endpoint (parent or child) - 
+`(i.e. <Param Name="IsMutiPart" Target="some_endpoint" ..... )`
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Engine - Allow to use Parameter Placeholders in ValueTemplate of Output / Input Column
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Destination - Allow to map Property Parameter which is set as Required (Usecase: Google Upload File - Set file path dynamically for each input row)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Destination - If required parameter is mapped you still get validation error unless you reopen the package
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Dynamic CRM Connection Manager - Add retry option so failed requests can be retried
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Dynamic CRM Connection Manager - Lookup is Cached multiple times in all threads if you set EnableParallelProcessing=True - Because of this you might get Item key already added error
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Add new functions FUN_FILE_WRITE, FUN_FILE_WRITE_BINARY
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Add new placeholder functions - FUN_FILE_{attribute} where attribute = Extension, Size, Size_Recursive, IsLocked, Encoding, Exists, Exists_Recursive, FILE_LastEdit_Date,Create_Date, Age_LastEdit, Age_Create, Count, Count_Recursive
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Add new placeholder functions - FUN_FOLDER_{attribute} where attribute = Name, Size, Exists, LastEdit_Date, Create_Date, Age_LastEdit, Age_Create, FileCount
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Source, API Source, API Destination - Support OData v3, v2 (Paginate based on any attribute __next or nextLink so all versions supported)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> License Manager - need to add note in transfer license tab like transfer license to different machine, change computer name, and/or change of domains
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> OAuth Connection Manager - Encrypt Refresh token file by default
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> PostgreSQL Connection Manager - Add Support for Encoding Parameter (to handle DB created with SQL_ASCII option and some table contains non-ascii data)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> REST API Task - Show message about response being filtered (on Test UI also in Runtime Log)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Salesforce Connection Manager - Add better logging so when request fails user know which URL is being blocked due to Proxy issue
+
+### Bug fixes
+
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Amazon S3 CSV Destination - You may get object reference not set error if you use data flow in a loop
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector - Zoho CRM - Update / INSERT / UPSERT Operation might fail if parameter value ends with double quotes (i.e. Trigger Parameter)
+- <b><span style={{ color: '#00971D' }}>FIX:</span></b> API Connector Engine - Detect 0001 or +18001231122 as string rather than integer (Plus sign can be used in Phone number field)
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Source, API Destination - Saving Mappings after searching removes other mappings
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Azure Storage Connection Manager - SAS URL is not Authenticating and throwing error "403 Server failed to authenticate the request" - Specially when Exists method is invoked on Container
+- <b><span style={{ color: '#0#A2000A' }}>FIX:</span></b> Dynamics CRM Connection Manager - When you click on Organization dropdown - You may receive Error - FCB 'EnableRegionalDisco' is disabled
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Dynamics CRM Destination - Give clear message when Lookup Entity Cache is invoked and duplicate row found for same text (when you set by text)
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Excel Destination - PreserveFormatting=True cause error - Invalid Cell: "A1:@0" if target sheet is blank
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Excel Source - Detect 0001 or +18001231122 as string rather than integer (Plus sign can be used in Phone number field)
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Excel Source - Error when multiple excel files are read having different first sheet name but using 
+`$first_sheet$`
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Export CSV Task - 
+`{null}` and `{columndelimiter}` replacement not working for Enable Custom Replacement rule option
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Export JSON Task, JSON Generator Transform, JSON File Destination - Bad JSON is generated when you check "Do not output empty parent nodes" option and you have nested sections
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> General - LicenseManager UI doesnt show Trial Build label clearly
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> General - SSIS Variable using Placeholder function might not work sometime if Variable is Numeric Type (i.e. Int, Long, Double) 
+`--{{User::vOrderID,BASE64ENC}}` will fail if vOrderID is Numeric type
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> HTML Table Source - Detect 0001 or +18001231122 as string rather than integer (Plus sign can be used in Phone number field)
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> HTML Table Source - Meta Data Issue - When first row is blank and later numeric values found it detects them as string rather than number
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> JSON Source, REST API Task - You may get SSL/TLS Channel error if you enter http:// URL which redirects to https://
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> JSON Source, XML Source, CSV Source - Pagination from Custom Header throwing error if you use EnablePageTokenForBody 
+`(i.e. use of [$pagetoken$] in body)`
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> OAuth Connection Manager - Bad Token is cached and not cleared in some cases after you generate token
+- <b><span style={{ color: '#A2000A' }}>FIX: OAuth Connection Manager - When using Full Browser to get refresh token it may fail with 400 Bad request in some cases due to handling of special chars in code (i.e. %2F, %2B)
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> PostgreSQL Connection Manager - Retain connection setting throws error if connection is reused in the package
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> PostgreSQL Connection Manager - TCP keep alive timer might crash with default (0) value on certain machines
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> REST API Task, JSON, XML, CSV Source - POST Call - Upload large file might fail with OutOfMemory Exception (2GB or larger)
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Salesforce Source - You may get error - Object reference not set when connection is not set
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Secure FTP Task - Get Folder list doesn't fetch all subfolders in the recursive scan
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Secure FTP Task - Get Folder list doesn't fetch folders if path doesnt end with slash at the end
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Secure FTP Task - Get Folder list doesn't work on the Root folder
+- <b><span style={{ color: '##A2000A' }}>FIX:</span></b> XML Source, XML Parser Transform - Detect 0001 or +18001231122 as string rather than integer (Plus sign can be used in Phone number field)
+
+## Version 4.1.2.10520 [May 21, 2021]
+---
+
+
+### New Features/Improvements
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Google Sheets - Add support for Tables (Tabs now listed as Tables)
+
+### Bug fixes
+
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> OAuth Connection Manager - Selecting Google Provider with Custom App throws Certificate Path error
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> REST API Task - Validation error is not reset after fixing it
+
+## Version 4.1.1.10513 [May 19, 2021]
+- <b><span style={{ color: '#00971D' }}>New Features/Improvements
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Sharepoint Online - Read/write List data, Download Files, Upload Files
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Engine - Add an option to replace Dynamic Expand Table parameters
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Engine - Allow to detect datatypes from property name
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Source - Show Tables in the list (Select Operation)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Source, API Destination - Parallel execution can cause Key already added exception
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Add FUN_TRIM_QUOTE placeholder function
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> HTTP Connection Manager - Add new timestamp format unix-epoch-ms (or just epoch-ms) to return UNIX Timestamp in milliseconds format in HASH / HMACH Authentication Type
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> HTTP Connection Manager - Allow 
+`[$body$]` placeholder in String to Sign in HMAC / HASH Authentication Type
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> OAuth Connection Manager - Add Google Sheets, Google BigQuery Provider
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> OAuth Connection Manager - Add Support for Google Service Account (using p12 file)
+
+### Bug fixes
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Amazon S3 JSON, XML, CSV File Source Task - Connection dropdown overlapping with Label
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connection Manager - Test Connection fails to use new Token
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Engine - Connection level parameter value not used by EndPoint when same parameter defined without value
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Engine - Loading Blank Label for Expand Column can set blank name for column
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Engine - Multi Select Parameter is not correctly decoded when Value is read
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Source, API Destination - UI Validation doesnt happen for destination, For Source throws error about required parameter even though some value supplied either in connection parameters / other overrides
+- <b><span style={{ color: '#A2000A' }}>FIX: HTTP Connection Manager - When your body is coming from File and you have used 
+`[$body-hash-xxxxxx$]` placeholder in HMAC / HASH Authentication it doesnt work   
