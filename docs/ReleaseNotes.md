@@ -371,3 +371,20 @@ title: Release Notes
 
    - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> JSON Source - Performance Improvement 
    `(when include parent column checked)`
+
+## Version 5.0.1.11031 [Nov 01, 2022]
+---
+
+### New Features/Improvements
+
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Zendesk - Show all custom fields when you query Tickets (Previous approach was limited to 5 fields only)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Zendesk - Update Read Tickets (Incremental) endpoint to support functions in Start Time Parameter. Now you can use date time function (i.e. yesterday, monthstart etc) along with static date (i.e. 2021-01-01 or 2021-01-01 23:59:59) to set
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Framework - Allow placeholders in ValueTemplate property for Columns with Dynamic Expand option set to true
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Salesforce Connection Manager - Provide an option to supply API Version for Bulk / SOAP API (Right now BULK API version is hardcoded and no way to change, SOAP also same way but work around is there to change Service Type=Other)
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Salesforce Connection Manager - Update API Version to 55.0 for SOAP and Bulk API to take advantage of new features
+
+### Bug fixes
+
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> All Components - Mapping file export does not encode special characters like "&" which cause issue with import same file throwing error - An error occurred while parsing EntityName. Line XX, position YY.
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector - Stripe - Update endpoints to for date time as input / output rather than Unix timestamp
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Framework - Some properties like Functions, ValueTemplate, Order, Label etc doesnt work in Param Template
