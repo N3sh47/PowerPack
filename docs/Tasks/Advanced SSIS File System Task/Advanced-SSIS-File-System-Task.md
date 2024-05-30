@@ -118,13 +118,16 @@ Set Target Path with Date and Time and file name with suitable extension.
 4. Thats all, you can run or Execute task.
 
 
-### Properties
+## Properties
 
 ### Property Name
-#### Action
+### Action
 
 Specifies what action you want to perform
+
+:::tip
 Available Options (Use numeric value listed in bracket if you have to [define expression](https://zappysys.com/links/?id=10099) on this property (for dynamic behavior).)
+:::
 
 | Option                        | Description                                           |
 |-------------------------------|-------------------------------------------------------|
@@ -153,11 +156,13 @@ Available Options (Use numeric value listed in bracket if you have to [define ex
 | GetFolderListAsADONETDataTable [[1110]](https://zappysys.com/links/?id=10099) | Get folder list as ADO.net DataTable           |
 
 
-#### Permission
+### Permission
 
 Specifies permission for file
-Available Options (Use numeric value listed in bracket if you have to [define expression](https://zappysys.com/links/?id=10099) on this property (for dynamic behavior).)
 
+:::tip
+Available Options (Use numeric value listed in bracket if you have to [define expression](https://zappysys.com/links/?id=10099) on this property (for dynamic behavior).)
+:::
 
 | Option                         | Description |
 |--------------------------------|-------------|
@@ -168,15 +173,16 @@ Available Options (Use numeric value listed in bracket if you have to [define ex
 | Full [4](https://zappysys.com/links/?id=10099)          | Full        |
 
 
-#### SearchString
+### SearchString
 
 String or pattern you want to search in file content
 
-#### 
 
-ReplaceString
+### ReplaceString
 
-#### Encoding
+New string you want to replace with
+
+### Encoding
 
 Encoding for target file (Only valid for Create new file, Change Encoding, Search Replace options)
 
@@ -200,5 +206,123 @@ Available Options (Use numeric value listed in bracket if you have to define exp
 | BigEndianWithoutBOM [11](https://zappysys.com/links/?id=10099) | UTF-16 BE Without BOM |
 
 
+### SearchMode
+
+Search mode (e.g. Normal, Extended or Regular Expression). In extended mode search/replace you can specify whitespace characters such as \r or carriage return, \n for new line, \t for tab, \0 for NULL and \v for vertical tab. In Regular expression search you can spe
+
+:::tip
+Available Options (Use numeric value listed in bracket if you have to [define expression](https://zappysys.com/links/?id=10099) on this property (for dynamic behavior).)
+:::
+
+| Option                                   | Description                                             |
+|------------------------------------------|---------------------------------------------------------|
+| Normal [0](https://zappysys.com/links/?id=10099)                | Normal Search                                           |
+| Extended [1](https://zappysys.com/links/?id=10099)             | Extended Search (\0, \r, \n, \t, \v allowed in search/replace string) |
+| RegularExpression [2](https://zappysys.com/links/?id=10099)   | Regular expression search (RegX pattern allowed in search/replace string) |
 
 
+### SearchIgnoreCase
+
+By default search is case sensitive. Check this option if you want to do case case-insensitive search
+
+### SourcePathAccessMode
+
+Path access mode for file/folder
+
+:::tip
+Available Options (Use numeric value listed in bracket if you have to [define expression](https://zappysys.com/links/?id=10099) on this property (for dynamic behavior).)
+:::
+
+| Option                              | Description    |
+|-------------------------------------|----------------|
+| Direct [0](https://zappysys.com/links/?id=10099)         | Direct         |
+| Variable [1](https://zappysys.com/links/?id=10099)      | Variable       |
+| Connection [2](https://zappysys.com/links/?id=10099)    | Connection     |
+
+
+
+### SourcePathValue
+
+Source path or pattern
+
+### SourcePathConnection
+
+Connection name which holds source path
+
+### SourcePathVariable
+
+Variable name which holds source path/pattern
+
+### Recursive
+
+Specifies how to handle scanning of items
+
+### ResultVariable
+
+Variable which holds result of Get Property action or Get List As ADO.net table action. Variable has to be object datatype if you are storing list returned from Get action.
+
+### TargetPathAccessMode
+
+Path access mode for file/folder
+
+:::tip
+Available Options (Use numeric value listed in bracket if you have to [define expression](https://zappysys.com/links/?id=10099) on this property (for dynamic behavior).)
+:::
+
+| Option            | Description |
+|-------------------|-------------|
+| Direct [0](https://zappysys.com/links/?id=10099)       | Direct      |
+| Variable [1](https://zappysys.com/links/?id=10099)     | Variable    |
+| Connection [2](https://zappysys.com/links/?id=10099)   | Connection  |
+
+
+
+### TargetPathValue	
+
+Specifies target path
+
+### TargetPathConnection
+
+Specifies target path
+
+### TargetPathVariable	
+
+Specifies target path
+
+### OverWriteOption	
+
+Specifies how to handle overwrite action
+
+:::tip
+Available Options (Use numeric value listed in bracket if you have to [define expression](https://zappysys.com/links/?id=10099) on this property (for dynamic behavior).)
+:::
+
+| Option                      | Description       |
+|-----------------------------|-------------------|
+| AlwaysOverwrite [0](https://zappysys.com/links/?id=10099)  | AlwaysOverwrite  |
+| FailIfExists [1](https://zappysys.com/links/?id=10099)     | FailIfExists     |
+| SkipIfExists [2](https://zappysys.com/links/?id=10099)     | SkipIfExists     |
+
+
+
+
+
+### CreateMissingTargetFolder	
+
+Specify this option if you want to create target folder automatically if its missing
+
+### ContinueOnError	
+
+Continue on error if source file/folder is missing
+
+### ExcludeRegXPattern	
+
+Regular expression pattern to exclude items from selection  (if you apply MyFile*.* filter for source path and then use ExcludeRegXPattern=(\.msi$|\.exe$) then it will include all files with matching name but exclude *.msi and *.exe)
+
+### IncludeRegXPattern	
+
+Regular expression pattern to include items from selection (if you apply MyFile*.* filter for source path and then use IncludeRegXPattern=(\.txt$|\.csv$) then it will include only txt and csv files with matching name pattern)
+
+### TreatRegXForFullPath	
+
+Treat include/exclude Regular Expression as Full Path expression rather than file name. If you have a use case of checking against Folder name pattern along with file name then use this option. When you check this option then using ^ in the front of expression will not work for File name pattern so instead of something like this ^MyFile\w+\.csv$ you need to change prefix check like this  [\\|/]MyFile\w+\.csv$ this way it works against full path check.
