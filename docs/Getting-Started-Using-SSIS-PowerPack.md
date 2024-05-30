@@ -42,3 +42,6 @@ After installation, new ZappySys SSIS tasks/components will appear under the fol
 4. **Find Data Flow Components**
    - Click on the **Data Flow** Tab, and the SSIS Toolbox will refresh.
    - Any items starting with `ZS` are ZappySys Components.
+
+
+![Getting Started](static/img/ssis-toolbox-where-is-control-flow-task-data-flow-components.png)
