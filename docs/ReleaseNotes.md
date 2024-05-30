@@ -684,38 +684,3 @@ title: Release Notes
 
 ### Bug fixes
 
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Amazon S3 CSV Destination - You may get object reference not set error if you use data flow in a loop
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector - Zoho CRM - Update / INSERT / UPSERT Operation might fail if parameter value ends with double quotes (i.e. Trigger Parameter)
-- <b><span style={{ color: '#00971D' }}>FIX:</span></b> API Connector Engine - Detect 0001 or +18001231122 as string rather than integer (Plus sign can be used in Phone number field)
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Source, API Destination - Saving Mappings after searching removes other mappings
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Azure Storage Connection Manager - SAS URL is not Authenticating and throwing error "403 Server failed to authenticate the request" - Specially when Exists method is invoked on Container
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Dynamics CRM Connection Manager - When you click on Organization dropdown - You may receive Error - FCB 'EnableRegionalDisco' is disabled
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Dynamics CRM Destination - Give clear message when Lookup Entity Cache is invoked and duplicate row found for same text (when you set by text)
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Excel Destination - PreserveFormatting=True cause error - Invalid Cell: "A1:@0" if target sheet is blank
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Excel Source - Detect 0001 or +18001231122 as string rather than integer (Plus sign can be used in Phone number field)
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Excel Source - Error when multiple excel files are read having different first sheet name but using 
-`$first_sheet$`
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Export CSV Task - 
-`{null}` and `{columndelimiter}` replacement not working for Enable Custom Replacement rule option
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Export JSON Task, JSON Generator Transform, JSON File Destination - Bad JSON is generated when you check "Do not output empty parent nodes" option and you have nested sections
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> General - LicenseManager UI doesnt show Trial Build label clearly
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> General - SSIS Variable using Placeholder function might not work sometime if Variable is Numeric Type (i.e. Int, Long, Double) 
-`--{{User::vOrderID,BASE64ENC}}` will fail if vOrderID is Numeric type
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> HTML Table Source - Detect 0001 or +18001231122 as string rather than integer (Plus sign can be used in Phone number field)
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> HTML Table Source - Meta Data Issue - When first row is blank and later numeric values found it detects them as string rather than number
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> JSON Source, REST API Task - You may get SSL/TLS Channel error if you enter http:// URL which redirects to https://
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> JSON Source, XML Source, CSV Source - Pagination from Custom Header throwing error if you use EnablePageTokenForBody 
-`(i.e. use of [$pagetoken$] in body)`
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> OAuth Connection Manager - Bad Token is cached and not cleared in some cases after you generate token
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> OAuth Connection Manager - When using Full Browser to get refresh token it may fail with 400 Bad request in some cases due to handling of special chars in code (i.e. %2F, %2B)
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> PostgreSQL Connection Manager - Retain connection setting throws error if connection is reused in the package
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> PostgreSQL Connection Manager - TCP keep alive timer might crash with default (0) value on certain machines
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> REST API Task, JSON, XML, CSV Source - POST Call - Upload large file might fail with OutOfMemory Exception (2GB or larger)
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Salesforce Source - You may get error - Object reference not set when connection is not set
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Secure FTP Task - Get Folder list doesn't fetch all subfolders in the recursive scan
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Secure FTP Task - Get Folder list doesn't fetch folders if path doesnt end with slash at the end
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Secure FTP Task - Get Folder list doesn't work on the Root folder
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> XML Source, XML Parser Transform - Detect 0001 or +18001231122 as string rather than integer (Plus sign can be used in Phone number field)
-
-## Version 4.1.2.10520 [May 21, 2021]
----
