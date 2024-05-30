@@ -423,5 +423,3 @@ When you enable this property it will prefix timestamp before Log messages.
 
 
 
-![Image](/img/pgp-encryption-logo.webp){: style="float: left; margin-right: 10px"}  
-Text to the right of the image.
