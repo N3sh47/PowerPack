@@ -15,19 +15,6 @@ title: System Requirements and Installation
 
 <b>For Beginners:</b> Refer to this article - Getting started  (How to design, debug, deploy, schedule SSIS Package (In SQL Agent and Catalog))
 
-<details>
-  <summary>Supported SSIS Versions:</summary>
-  <div>
-    <div>SSIS 2022, 2019, 2017, 2016, 2014, 2012 on Windows OS only</div>
-  </div>
-</details>
-
-<details>
-  <summary>Supported SQL Server Version for SSIS Package Deployment:</summary>
-  <div>
-    <div>SQL Server 2022, 2019, 2017, 2016, 2014, 2012 on Windows OS only</div>
-  </div>
-</details>
 
 
 <details>
