@@ -153,4 +153,52 @@ Available Options (Use numeric value listed in bracket if you have to [define ex
 | GetFolderListAsADONETDataTable [[1110]](https://zappysys.com/links/?id=10099) | Get folder list as ADO.net DataTable           |
 
 
+#### Permission
+
+Specifies permission for file
+Available Options (Use numeric value listed in bracket if you have to [define expression](https://zappysys.com/links/?id=10099) on this property (for dynamic behavior).)
+
+
+| Option                         | Description |
+|--------------------------------|-------------|
+| Default [0](https://zappysys.com/links/?id=10099)       | Default     |
+| Read [1](https://zappysys.com/links/?id=10099)          | Read        |
+| ReadWrite [2](https://zappysys.com/links/?id=10099)     | ReadWrite   |
+| Execute [3](https://zappysys.com/links/?id=10099)       | Execute     |
+| Full [4](https://zappysys.com/links/?id=10099)          | Full        |
+
+
+#### SearchString
+
+String or pattern you want to search in file content
+
+#### 
+
+ReplaceString
+
+#### Encoding
+
+Encoding for target file (Only valid for Create new file, Change Encoding, Search Replace options)
+
+:::tip
+Available Options (Use numeric value listed in bracket if you have to define expression on this property (for dynamic behavior).)
+:::
+
+| Option                    | Description    |
+|---------------------------|----------------|
+| Default [0](https://zappysys.com/links/?id=10099)         | Default        |
+| ASCII [1](https://zappysys.com/links/?id=10099)           | ASCII          |
+| UTF8 [2](https://zappysys.com/links/?id=10099)            | UTF-8          |
+| UTF16 [3](https://zappysys.com/links/?id=10099)           | UTF-16 LE (i.e. Unicode Little Endian) |
+| UTF32 [4](https://zappysys.com/links/?id=10099)           | UTF-32         |
+| UTF8WithoutBOM [5](https://zappysys.com/links/?id=10099)  | UTF-8 Without BOM |
+| UTF32WithoutBOM [6](https://zappysys.com/links/?id=10099) | UTF-32 Without BOM |
+| UTF7 [7](https://zappysys.com/links/?id=10099)            | UTF-7          |
+| UTF7WithoutBOM [8](https://zappysys.com/links/?id=10099)  | UTF-7 Without BOM |
+| UTF16WithoutBOM [9](https://zappysys.com/links/?id=10099) | UTF-16 Without BOM |
+| BigEndian [10](https://zappysys.com/links/?id=10099)      | UTF-16 BE (i.e. Unicode Big Endian) |
+| BigEndianWithoutBOM [11](https://zappysys.com/links/?id=10099) | UTF-16 BE Without BOM |
+
+
+
 
