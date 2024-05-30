@@ -38,13 +38,6 @@ title: System Requirements and Installation
 </details>
 
 
-Supported SSIS Versions:
-
-    SSIS 2022, 2019, 2017, 2016, 2014, 2012 on Windows OS only
-
-Supported SQL Server Version for SSIS Package Deployment:
-
-    SQL Server 2022, 2019, 2017, 2016, 2014, 2012 on Windows OS only
 
 ## Supported Operating Systems:
 
