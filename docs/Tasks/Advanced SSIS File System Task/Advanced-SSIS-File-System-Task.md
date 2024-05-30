@@ -38,3 +38,12 @@ In this tutorial you will learn how to use ZS Advanced File System Task to perfo
 ### How to copy files using Advanced File System Task.
 1. Now, Double click on Advanced File System Task to configure it.
 2. Set Action to Copy File(s), Select file path from browse button.
+
+```
+Note: If you want to operation with multiple files then use wildcard pattern as below (when you use wildcard pattern in source path then system will treat target path as folder regardless you end with slash ).
+
+Examples:
+c:\data\file123.csv (single file).
+c:\data\file*.csv (all files starting with file).
+c:\data\subfolder\*.csv (all files with .csv Extension and located under folder subfolder).
+```
