@@ -120,7 +120,37 @@ Set Target Path with Date and Time and file name with suitable extension.
 
 ### Properties
 
-#### Property Name
+### Property Name
+#### Action
+
+Specifies what action you want to perform
+Available Options (Use numeric value listed in bracket if you have to [define expression](https://zappysys.com/links/?id=10099) on this property (for dynamic behavior).)
+
+| Option                        | Description                                           |
+|-------------------------------|-------------------------------------------------------|
+| DeleteFile [[30]](https://zappysys.com/links/?id=10099)               | Delete file(s)                                        |
+| DeleteFolder [40]             | Delete folder                                         |
+| DeleteFolderWithSubfolders [41] | Delete folder (including Subfolders)                |
+| CopyFile [50]                 | Copy file(s)                                          |
+| MoveFile [60]                 | Move file(s)                                          |
+| RenameFile [70]               | Rename file(s)                                        |
+| SearchReplaceFile [80]        | Search and replace string in file                     |
+| ChangeEncoding [81]           | Change Encoding of file(s)                            |
+| CreateNewFile [90]            | Create new file                                       |
+| AppendToFile [91]             | Append data to file                                   |
+| CreateFolder [100]            | Create new folder                                     |
+| CreateFolderIfNotExists [111] | Create new folder if does not exist                   |
+| GetFileSize [1010]            | Get file(s) size                                      |
+| GetFileExistsFlag [1030]      | Get file exist status                                 |
+| GetFileCount [1040]           | Get files count                                       |
+| GetFileLastModifiedDate [1050] | Get file LastModifiedDate                           |
+| GetFilePathLatest [1051]      | Get Latest file path (Sort By LastModifiedDate)       |
+| GetFilePathOldest [1052]      | Get Oldest file path (Sort By LastModifiedDate)       |
+| GetFileDataAsString [1080]    | Get file text                                         |
+| GetFolderExistsFlag [1090]    | Get folder exist status                               |
+| GetFileLockFlag [1091]        | Get lock status of file                               |
+| GetFileListAsADONETDataTable [1100] | Get file list as ADO.net DataTable              |
+| GetFolderListAsADONETDataTable [1110] | Get folder list as ADO.net DataTable           |
 
 
 
