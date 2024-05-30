@@ -733,27 +733,3 @@ title: Release Notes
 ## Version 4.1.1.10513 [May 19, 2021]
 ---
 
-### New Features/Improvements
-
-- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Sharepoint Online - Read/write List data, Download Files, Upload Files
-- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Engine - Add an option to replace Dynamic Expand Table parameters
-- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector Engine - Allow to detect datatypes from property name
-- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Source - Show Tables in the list (Select Operation)
-- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Source, API Destination - Parallel execution can cause Key already added exception
-- <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Add FUN_TRIM_QUOTE placeholder function
-- <b><span style={{ color: '#00971D' }}>NEW:</span></b> HTTP Connection Manager - Add new timestamp format unix-epoch-ms (or just epoch-ms) to return UNIX Timestamp in milliseconds format in HASH / HMACH Authentication Type
-- <b><span style={{ color: '#00971D' }}>NEW:</span></b> HTTP Connection Manager - Allow 
-`[$body$]` placeholder in String to Sign in HMAC / HASH Authentication Type
-- <b><span style={{ color: '#00971D' }}>NEW:</span></b> OAuth Connection Manager - Add Google Sheets, Google BigQuery Provider
-- <b><span style={{ color: '#00971D' }}>NEW:</span></b> OAuth Connection Manager - Add Support for Google Service Account (using p12 file)
-
-### Bug fixes
-
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Amazon S3 JSON, XML, CSV File Source Task - Connection dropdown overlapping with Label
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connection Manager - Test Connection fails to use new Token
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Engine - Connection level parameter value not used by EndPoint when same parameter defined without value
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Engine - Loading Blank Label for Expand Column can set blank name for column
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Engine - Multi Select Parameter is not correctly decoded when Value is read
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Source, API Destination - UI Validation doesnt happen for destination, For Source throws error about required parameter even though some value supplied either in connection parameters / other overrides
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> HTTP Connection Manager - When your body is coming from File and you have used 
-`[$body-hash-xxxxxx$]` placeholder in HMAC / HASH Authentication it doesnt work  
