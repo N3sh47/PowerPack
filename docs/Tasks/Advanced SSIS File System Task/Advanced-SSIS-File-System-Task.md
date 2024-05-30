@@ -120,20 +120,7 @@ Set Target Path with Date and Time and file name with suitable extension.
 
 ### Properties
 
-| Outer Column 1       | Outer Column 2                  |
-|----------------------|---------------------------------|
-| Inner Column 1a      | Inner Column 1b                 |
-| Inner Column 2a      | Inner Column 2b                 |
-|                      |              |                   |
-|                      | Test 1       |  Test 1           |
-
-
-
-| Outer Column 1       | Outer Column 2                  |
-|----------------------|---------------------------------|
-| Inner Column 1a      | Inner Column 1b                 |
-| Inner Column 2a      |   Inner Column 2b               |
-|                      |     Test 1                      |
+#### Property Name
 
 
 
