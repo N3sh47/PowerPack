@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: System Requirements and Installation
+sidebar_label: test
 ---
 
 - To design SSIS Packages you will need correct version of SSDT / SQL Data Tools (i.e. Visual Studio SSIS Designer). Also known as SSDT-BI
