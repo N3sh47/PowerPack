@@ -691,7 +691,7 @@ title: Release Notes
 
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Amazon S3 CSV Destination - You may get object reference not set error if you use data flow in a loop
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector - Zoho CRM - Update / INSERT / UPSERT Operation might fail if parameter value ends with double quotes (i.e. Trigger Parameter)
-- <b><span style={{ color: '#00971D' }}>FIX:</span></b> API Connector Engine - Detect 0001 or +18001231122 as string rather than integer (Plus sign can be used in Phone number field)
+- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Connector Engine - Detect 0001 or +18001231122 as string rather than integer (Plus sign can be used in Phone number field)
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> API Source, API Destination - Saving Mappings after searching removes other mappings
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Azure Storage Connection Manager - SAS URL is not Authenticating and throwing error "403 Server failed to authenticate the request" - Specially when Exists method is invoked on Container
 - <b><span style={{ color: '#A2000A' }}>FIX:</span></b> Dynamics CRM Connection Manager - When you click on Organization dropdown - You may receive Error - FCB 

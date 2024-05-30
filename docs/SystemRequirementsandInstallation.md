@@ -15,6 +15,20 @@ title: System Requirements and Installation
 
 <b>For Beginners:</b> Refer to this article - Getting started  (How to design, debug, deploy, schedule SSIS Package (In SQL Agent and Catalog))
 
+<details>
+  <summary>Toggle me!</summary>
+  <div>
+    <div>This is the detailed content</div>
+    <br/>
+    <details>
+      <summary>
+        Nested toggle! Some surprise inside...
+      </summary>
+      <div>😲😲😲😲😲</div>
+    </details>
+  </div>
+</details>
+
 Supported SSIS Versions:
 
     SSIS 2022, 2019, 2017, 2016, 2014, 2012 on Windows OS only
