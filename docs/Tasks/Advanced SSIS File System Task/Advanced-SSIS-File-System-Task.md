@@ -326,3 +326,102 @@ Regular expression pattern to include items from selection (if you apply MyFile*
 ### TreatRegXForFullPath	
 
 Treat include/exclude Regular Expression as Full Path expression rather than file name. If you have a use case of checking against Folder name pattern along with file name then use this option. When you check this option then using ^ in the front of expression will not work for File name pattern so instead of something like this ^MyFile\w+\.csv$ you need to change prefix check like this  [\\|/]MyFile\w+\.csv$ this way it works against full path check.
+
+### SortBy
+
+SortBy
+
+:::tip
+Available Options (Use numeric value listed in bracket if you have to [define expression](https://zappysys.com/links/?id=10099) on this property (for dynamic behavior).)
+:::
+
+| Option                      | Description                  |
+|-----------------------------|------------------------------|
+| Size [0](https://zappysys.com/links/?id=10099)                 | File Size in Bytes           |
+| LastModifiedDate [1](https://zappysys.com/links/?id=10099)     | File Last Modified DateTime |
+| CreationDate [2](https://zappysys.com/links/?id=10099)         | File Creation DateTime      |
+| AgeInDays [3](https://zappysys.com/links/?id=10099)            | File Age in Days            |
+| LastEditInDays [4](https://zappysys.com/links/?id=10099)       | Last Edit in Days           |
+| Content [5](https://zappysys.com/links/?id=10099)              | File Content                |
+| Exists [6](https://zappysys.com/links/?id=10099)               | File Exists Flag            |
+| FileCount [7](https://zappysys.com/links/?id=10099)            | File Count                  |
+| FolderPath [8](https://zappysys.com/links/?id=10099)           | File Directory Path         |
+| FilePath [9](https://zappysys.com/links/?id=10099)             | File Path                   |
+| FileName [10](https://zappysys.com/links/?id=10099)           | File Name                   |
+| FileExtension [11](https://zappysys.com/links/?id=10099)      | File Extension              |
+| FileEncoding [12](https://zappysys.com/links/?id=10099)       | File Encoding               |
+| IsLocked [13](https://zappysys.com/links/?id=10099)           | Is File Locked              |
+
+
+### SortDirection
+
+Sort order (e.g. Ascending or Descending)
+
+:::tip
+Available Options (Use numeric value listed in bracket if you have to [define expression](https://zappysys.com/links/?id=10099) on this property (for dynamic behavior).)
+:::
+
+| Option            | Description |
+|-------------------|-------------|
+| Asc [0](https://zappysys.com/links/?id=10099)   | Asc         |
+| Desc [1](https://zappysys.com/links/?id=10099)  | Desc        |
+
+
+### WhereClause
+
+Where clause expression to filter items. (e.g. Size>100 and Extension IN ('.txt','.csv') )
+
+### EnableSort	
+
+Sort items by specified attribute
+
+### MaxItems
+
+Maximum items to return (e.g. TOP)
+
+### SkipItems
+
+Maximum items to skip (e.g. SKIP)
+
+### LoggingMode
+
+:::tip
+Available Options (Use numeric value listed in bracket if you have to [define expression](https://zappysys.com/links/?id=10099) on this property (for dynamic behavior).)
+:::
+
+
+| Option               | Description |
+|----------------------|-------------|
+| Normal [0](https://zappysys.com/links/?id=10099)     | Normal      |
+| Medium [1](https://zappysys.com/links/?id=10099)     | Medium      |
+| Detailed [2](https://zappysys.com/links/?id=10099)   | Detailed    |
+| Debugging [3](https://zappysys.com/links/?id=10099)  | Debugging   |
+
+
+### PrefixTimestamp
+
+When you enable this property it will prefix timestamp before Log messages.
+
+## Settings UI
+
+![Setting UI](/img/ssis-settingui-file-system-task-1.png)
+
+![Setting UI](/img/ssis-settingui-file-system-task-2.png)
+
+
+## See Also
+
+- [SSIS JSON Source Connector](https://zappysys.com/onlinehelp/ssis-powerpack/scr/json-source.htm)
+- [SSIS XML Source Connector](https://zappysys.com/onlinehelp/ssis-powerpack/scr/xml-source.htm)
+- [SSIS Export JSON File Task](https://zappysys.com/onlinehelp/ssis-powerpack/scr/export-json-file-task.htm)
+- [SSIS MongoDB Source Adapter](https://zappysys.com/onlinehelp/ssis-powerpack/scr/mongodb-source.htm)
+
+
+## Articles / Tutorials
+
+[Click here to see all articles for [SSIS Advanced File System Task] category](https://zappysys.com/blog/category/ssis/tasks/ssis-advanced-file-system-task/)
+
+
+
+![Image](/img/pgp-encryption-logo.webp){: style="float: left; margin-right: 10px"}  
+Text to the right of the image.
