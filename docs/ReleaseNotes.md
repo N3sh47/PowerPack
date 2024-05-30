@@ -719,17 +719,3 @@ title: Release Notes
 
 ## Version 4.1.2.10520 [May 21, 2021]
 ---
-
-
-### New Features/Improvements
-
-- <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Connector - Google Sheets - Add support for Tables (Tabs now listed as Tables)
-
-### Bug fixes
-
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> OAuth Connection Manager - Selecting Google Provider with Custom App throws Certificate Path error
-- <b><span style={{ color: '#A2000A' }}>FIX:</span></b> REST API Task - Validation error is not reset after fixing it
-
-## Version 4.1.1.10513 [May 19, 2021]
----
-
