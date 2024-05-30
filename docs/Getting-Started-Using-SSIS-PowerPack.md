@@ -44,4 +44,4 @@ After installation, new ZappySys SSIS tasks/components will appear under the fol
    - Any items starting with `ZS` are ZappySys Components.
 
 
-![Getting Started](static/img/ssis-toolbox-where-is-control-flow-task-data-flow-components.png)
+![Getting Started](/img/ssis-toolbox-where-is-control-flow-task-data-flow-components.png)
