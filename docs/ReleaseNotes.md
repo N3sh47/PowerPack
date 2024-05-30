@@ -671,10 +671,13 @@ title: Release Notes
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Destination - Allow to map Property Parameter which is set as Required (Usecase: Google Upload File - Set file path dynamically for each input row)
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> API Destination - If required parameter is mapped you still get validation error unless you reopen the package
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> Dynamic CRM Connection Manager - Add retry option so failed requests can be retried
-- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Dynamic CRM Connection Manager - Lookup is Cached multiple times in all threads if you set EnableParallelProcessing=True - Because of this you might get Item key already added error
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> Dynamic CRM Connection Manager - Lookup is Cached multiple times in all threads if you set 
+`EnableParallelProcessing=True` - Because of this you might get Item key already added error
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Add new functions FUN_FILE_WRITE, FUN_FILE_WRITE_BINARY
-- <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Add new placeholder functions - FUN_FILE_{attribute} where attribute = Extension, Size, Size_Recursive, IsLocked, Encoding, Exists, Exists_Recursive, FILE_LastEdit_Date,Create_Date, Age_LastEdit, Age_Create, Count, Count_Recursive
-- <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Add new placeholder functions - FUN_FOLDER_{attribute} where attribute = Name, Size, Exists, LastEdit_Date, Create_Date, Age_LastEdit, Age_Create, FileCount
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Add new placeholder functions 
+`- FUN_FILE_{attribute} where attribute = Extension, Size, Size_Recursive, IsLocked, Encoding, Exists, Exists_Recursive, FILE_LastEdit_Date,Create_Date, Age_LastEdit, Age_Create, Count, Count_Recursive`
+- <b><span style={{ color: '#00971D' }}>NEW:</span></b> General - Add new placeholder functions 
+`- FUN_FOLDER_{attribute} where attribute = Name, Size, Exists, LastEdit_Date, Create_Date, Age_LastEdit, Age_Create, FileCount`
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> JSON Source, API Source, API Destination - Support OData v3, v2 (Paginate based on any attribute __next or nextLink so all versions supported)
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> License Manager - need to add note in transfer license tab like transfer license to different machine, change computer name, and/or change of domains
 - <b><span style={{ color: '#00971D' }}>NEW:</span></b> OAuth Connection Manager - Encrypt Refresh token file by default
