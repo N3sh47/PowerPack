@@ -123,9 +123,10 @@ Set Target Path with Date and Time and file name with suitable extension.
 | Outer Column 1       | Outer Column 2                  |
 |----------------------|---------------------------------|
 | Inner Column 1a      | Inner Column 1b                 |
-| Inner Column 2a      | Inner       | Column 2b         |
-|                      |-------------|-------------------|
-|                      | Tes 1       |  Test 1           |
+| Inner Column 2a      | Inner Column 2b                 |
+|                      |              |                   |
+|                      | Test 1       |  Test 1           |
+
 
 
 
