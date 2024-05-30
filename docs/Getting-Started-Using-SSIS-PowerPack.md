@@ -83,3 +83,41 @@ For SQL Server 2012 or higher, you don't have to do any additional work to find 
 2. Launch SQL Server 2012 Data Tools or SSDT (previously known as BIDS) from the start menu under Microsoft SQL Server 2012 folder.
 
 ![SQL Server](/img/ssdt-sql-server-data-tools.png)
+
+3. Open or create new Integration Services Project (File | New | Project ... select Business Intelligence | Integration Services Project
+4. Once SSIS Project is loaded look under SSIS Toolbox.... You will find all PowerPack tasks starting with BW
+
+![ToolBox](/img/ssis-toolbox-sql-2012.png)
+
+5. To find Source, Targets and Adapters you have to switch to DataFlow Tab and look under SSIS Toolbox.... You will find all PowerPack Sources, Targets, Transforms starting with BW
+
+![Toolbox](/img/ssis-toolbox-sql-2012-dataflow.png)
+
+### For SQL Server 2008 R2, 2008, 2005
+For SQL Server 2008 R2 or prior version there is no automatic toolbox refresh for SSIS. So you will have to Add new Tasks/Components manually by performing following steps
+
+1. Install SSIS PowerPack.
+2. Launch Business Intelligence Development Studio (known as BIDS) From start menu under Microsoft SQL Server 2008/2005 folder.
+
+![SQL Server](static/img/bids-sql-server-business-intelligence-development-studio.png)
+
+3. Open or create new Integration Services Project (File | New | Project ... select Business Intelligence | Integration Services Project)
+4. Once SSIS Project is loaded right click under SSIS Toolbox ... Click [Choose Items]... Wait for few seconds (sometimes loading Items dialog box takes very long)
+
+![ToolBox](/img/ssis-toolbox-sql-2008-2005-choose-items-add-tasks.png)
+
+5. Once Choose Items dialogbox is loaded ... Click on [SSIS Control Flow Items] tab. Click on Name Column header to sort by Name. Check all items starting with BW.
+
+![ToolBox](/img/ssis-toolbox-sql-2008-2005-choose-items-add-tasks-2.png)
+
+6. After you select Task now click on [SSIS Data Flow Items] tab. Click on Name Column header to sort by Name. Check all items starting with ZS (ZappySys).
+
+![ToolBox](/img/ssis-toolbox-sql-2008-2005-choose-items-add-tasks-3.png)
+
+7. Click OK to close dialogbox.
+8. After you close Choose Item dialogbox your SSIS Toolbox should refresh and selected tasks and transform should appear under respective category in toolbox. Dataflow items will only appear if you switch to Dataflow designer.
+
+![ToolBox](/img/ssis-powerpack-tasks.png)
+
+### FAQ
+### References
