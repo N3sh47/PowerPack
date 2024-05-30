@@ -84,7 +84,7 @@ Set Target Path with Date and Time and file name with suitable extension.
 1. Double click on Advanced File System Task to configure it.
 2. Set Action to Get file exist status, select file path. Select Result Variable or click [here](https://zappysys.com/blog/get-api-data-with-dynamic-url-and-load-into-sql-server/#Create_a_variable) for create new variable.
 
-![File Exists](static/img/ssis-check-file-exists-file-system-task.png)
+![File Exists](/img/ssis-check-file-exists-file-system-task.png)
 
 3. Click OK button to save Advance File System configure setting UI.
 4. Thats all, you can run or Execute task.
