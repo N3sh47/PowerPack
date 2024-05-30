@@ -99,7 +99,7 @@ For SQL Server 2008 R2 or prior version there is no automatic toolbox refresh fo
 1. Install SSIS PowerPack.
 2. Launch Business Intelligence Development Studio (known as BIDS) From start menu under Microsoft SQL Server 2008/2005 folder.
 
-![SQL Server](static/img/bids-sql-server-business-intelligence-development-studio.png)
+![SQL Server](/img/bids-sql-server-business-intelligence-development-studio.png)
 
 3. Open or create new Integration Services Project (File | New | Project ... select Business Intelligence | Integration Services Project)
 4. Once SSIS Project is loaded right click under SSIS Toolbox ... Click [Choose Items]... Wait for few seconds (sometimes loading Items dialog box takes very long)
