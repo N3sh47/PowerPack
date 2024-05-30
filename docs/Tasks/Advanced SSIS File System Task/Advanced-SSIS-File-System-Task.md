@@ -120,3 +120,9 @@ Set Target Path with Date and Time and file name with suitable extension.
 
 ### Properties
 
+| Property Name        | Description                                                                                          |
+|----------------------|------------------------------------------------------------------------------------------------------|
+| Action               | Specifies what action you want to perform                                                           |
+| Available Options    | (Use numeric value listed in bracket if you have to define expression on this property (for dynamic behavior).) |
+|----------------------|------------------------------------------------------------------------------------------------------|
+
