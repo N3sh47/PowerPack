@@ -49,7 +49,7 @@ After installation, new ZappySys SSIS tasks/components will appear under the fol
 ## Content
 
 - For SQL Server 2017 (vNext) - SSDT BI for Visual Studio 2015/2017 (Apr 2017 Update or later) 
-- [GFor SQL Server 2017 (vNext) - SSDT BI for Visual Studio 2015/2017 (Apr 2017 Update or later) )](#for-sql-server-2017-vnext)
+- [For SQL Server 2017 (vNext) - SSDT BI for Visual Studio 2015/2017 (Apr 2017 Update or later)](#For SQL Server 2017 (vNext) - SSDT BI for Visual Studio 2015/2017 (Apr 2017 Update or later))
 
 - For SQL Server 2012, 2014 or 2016
 - For SQL Server 2008 R2, 2008 or 2005
