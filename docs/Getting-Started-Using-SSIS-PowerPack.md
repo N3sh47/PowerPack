@@ -45,3 +45,26 @@ After installation, new ZappySys SSIS tasks/components will appear under the fol
 
 
 ![Getting Started](/img/ssis-toolbox-where-is-control-flow-task-data-flow-components.png)
+
+## Content
+
+- For SQL Server 2017 (vNext) - SSDT BI for Visual Studio 2015/2017 (Apr 2017 Update or later)
+- For SQL Server 2012, 2014 or 2016
+- For SQL Server 2008 R2, 2008 or 2005
+- FAQ
+- References
+
+# SQL Server 2017 (vNext) - SSDT BI for Visual Studio 2015/2017 (Apr 2017 Update or later)
+
+If you have downloaded SSDT BI for Visual Studio 2015 or 2017 after April 2017 and you notice that ZappySys Tasks are not showing up in the SSIS Toolbox, then read this section. The new version of SSDT BI comes with support for SQL Server vNext (2017). You may not realize it, but in the latest SSDT for VS 2015, by default, when you create an SSIS Package it will target vNext (SQL Server 2017). If vNext is selected as the target version, then you will not see any ZappySys Tasks/Components in the SSIS Toolbox. To switch to a lower SSIS version (i.e., SSIS 2016, 2014, or 2012) perform the following steps so you can see ZappySys Components in the SSIS toolbox.
+
+:::info
+**Note:** Starting from Visual Studio 2015, Microsoft introduced authoring SSIS Packages for multiple versions (i.e., the same Visual Studio version can be used to edit packages for 2012, 2014, 2016, vNext). Also, you can upgrade or downgrade the SSIS package format in a few clicks (see the steps below).
+:::
+
+1. Install SSIS PowerPack.
+2. Launch Visual Studio 2015 or 2017. Create or open your existing SSIS Solution.
+3. In the Solution Explorer, right-click on the SSIS Project Node and click **Properties** (this node may be one level below the solution node as shown in the screenshot below).
+4. When you see Properties, select **Configuration Properties**. You will see **TargetServerVersion**. Change that to a version other than vNext and click **Yes** if you see a warning of Downgrade and then click **OK**.
+
+
