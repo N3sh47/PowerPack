@@ -49,8 +49,6 @@ After installation, new ZappySys SSIS tasks/components will appear under the fol
 ## Content
 
 - For SQL Server 2017 (vNext) - SSDT BI for Visual Studio 2015/2017 (Apr 2017 Update or later) 
-- [For SQL Server 2017 (vNext) - SSDT BI for Visual Studio 2015/2017 (Apr 2017 Update or later)](#For SQL Server 2017 (vNext) - SSDT BI for Visual Studio 2015/2017 (Apr 2017 Update or later))
-
 - For SQL Server 2012, 2014 or 2016
 - For SQL Server 2008 R2, 2008 or 2005
 - FAQ
@@ -69,4 +67,19 @@ If you have downloaded SSDT BI for Visual Studio 2015 or 2017 after April 2017 a
 3. In the Solution Explorer, right-click on the SSIS Project Node and click **Properties** (this node may be one level below the solution node as shown in the screenshot below).
 4. When you see Properties, select **Configuration Properties**. You will see **TargetServerVersion**. Change that to a version other than vNext and click **Yes** if you see a warning of Downgrade and then click **OK**.
 
+![vNext](/img/ssdt-bi-visual-studio-2015-edit-change-ssis-version-2012-2014-2016.png)
 
+### Make sure common section is expanded in SSIS toolbox
+
+Some customers didn't see our components because common section in toolbar was not expanded.
+
+![Common](/img/view-ssis-toolbox.png)
+
+### For SQL Server 2012, 2014, 2016
+
+For SQL Server 2012 or higher, you don't have to do any additional work to find your newly installed components. In SSIS 2012, newly installed components automatically appear in the SSIS Toolbox. Please perform the following steps to find SSIS PowerPack Tasks and Components:
+
+1. Install SSIS PowerPack.
+2. Launch SQL Server 2012 Data Tools or SSDT (previously known as BIDS) from the start menu under Microsoft SQL Server 2012 folder.
+
+![SQL Server](/img/ssdt-sql-server-data-tools.png)
