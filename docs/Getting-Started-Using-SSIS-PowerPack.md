@@ -49,10 +49,10 @@ After installation, new ZappySys SSIS tasks/components will appear under the fol
 ## Content
 
 - [For SQL Server 2017 (vNext) - SSDT BI for Visual Studio 2015/2017 (Apr 2017 Update or later)](#sql-server-2017-vnext---ssdt-bi-for-visual-studio-20152017-apr-2017-update-or-later)
-- [For SQL Server 2012, 2014 or 2016](https://power-pack.vercel.app/docs/Getting-Started-Using-SSIS-PowerPack#for-sql-server-2012-2014-2016)
-- [For SQL Server 2008 R2, 2008 or 2005](https://power-pack.vercel.app/docs/Getting-Started-Using-SSIS-PowerPack#for-sql-server-2008-r2-2008-2005)
-- [FAQ](https://power-pack.vercel.app/docs/Getting-Started-Using-SSIS-PowerPack#faq)
-- [References](https://power-pack.vercel.app/docs/Getting-Started-Using-SSIS-PowerPack#references)
+- [For SQL Server 2012, 2014 or 2016](#for-sql-server-2012-2014-2016)
+- [For SQL Server 2008 R2, 2008 or 2005](#for-sql-server-2008-r2-2008-2005)
+- [FAQ](#faq)
+- [References](#references)
 
 ### SQL Server 2017 (vNext) - SSDT BI for Visual Studio 2015/2017 (Apr 2017 Update or later)
 
