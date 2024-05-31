@@ -78,7 +78,7 @@ SecretKey: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 2. Select Connection, set SQL Source type to DirectValue and CommandType to CreateTable.
 Note : Replace Table Name.
 
-```code
+```h
 {
     /*For more info visit : http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateTable.html */
     TableName: 'Thread',
