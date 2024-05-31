@@ -5,9 +5,6 @@ sidebar_label: 'SSIS Amazon DynamoDB ExecuteSQL Task'
 
 ![DynamoDB](/img/ssis-amazon-dynamodb-executesql-task.png)
 
-Amazon DynamoDB ExecuteSQL Task can be used to execute ad-hoc commands for DynamoDB (e.g. DDL statements such as Create/Alter/Drop Table, DML statements such as Insert, Update, Delete records)
-
-
 export const Highlight = ({children, color}) => (
   <span
     style={{
@@ -20,4 +17,7 @@ export const Highlight = ({children, color}) => (
   </span>
 );
 
-<Highlight color="#25c2a0">Docusaurus green</Highlight> and <Highlight color="#1877F2">Facebook blue</Highlight> are my favorite colors.
+
+Amazon DynamoDB ExecuteSQL Task can be used to execute ad-hoc commands for DynamoDB (e.g. DDL statements such as Create/Alter/Drop Table, DML statements such as Insert, Update, Delete records)
+
+<a href="#" ><Highlight color="#25c2a0">Download</Highlight></a>
