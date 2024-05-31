@@ -110,3 +110,36 @@ Note : Replace Table Name.
     }
 }
 ```
+
+
+
+![SSIS Amazon](/img/ssis-amazon-dynamodb-create-table-request.png)
+
+3. Finally, you can run by press Test / Preview button or hit on OK button and Execute Package.
+
+![SSIS Amazon](/img/run-amazon-dynamoDb-task.png)
+
+
+
+
+## Properties
+### Property Name
+### ResultsetType
+
+ResultSet Type. It can be None, FullResultset or SingleValue. When FullResultset is specified then you have to store result in Object type variable. Full result is ADO.net DataTable. SingleValue is Object datatype
+
+:::tip
+Available Options (Use numeric value listed in bracket if you have to [define expression](https://zappysys.com/links/?id=10099) on this property (for dynamic behavior).)
+:::
+
+<details>
+  <summary>Available Options</summary>
+  <div>
+    <br/>
+    <details>
+      <summary>
+        <div>Use numeric value listed in bracket if you have to <a href="https://zappysys.com/links/?id=10099">define expression</a> on this property (for dynamic behavior).</div>
+      </summary>
+    </details>
+  </div>
+</details>
