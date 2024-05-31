@@ -128,18 +128,39 @@ Note : Replace Table Name.
 
 ResultSet Type. It can be None, FullResultset or SingleValue. When FullResultset is specified then you have to store result in Object type variable. Full result is ADO.net DataTable. SingleValue is Object datatype
 
-:::tip
-Available Options (Use numeric value listed in bracket if you have to [define expression](https://zappysys.com/links/?id=10099) on this property (for dynamic behavior).)
-:::
 
 <details>
   <summary>Available Options</summary>
   <div>
     <br/>
     <details>
-      <summary>
+      <div>
         Use numeric value listed in bracket if you have to <a href="https://zappysys.com/links/?id=10099">define expression</a> on this property (for dynamic behavior).
-      </summary>
+      </div>
+    </details>
+  </div>
+</details>
+
+| Option                           | Description    |
+|----------------------------------|----------------|
+| None [0](https://zappysys.com/links/?id=10099)          | None           |
+| FullResultset [1](https://zappysys.com/links/?id=10099) | FullResultset  |
+| SingleValue [2](https://zappysys.com/links/?id=10099)   | SingleValue    |
+| RawResult [4](https://zappysys.com/links/?id=10099)     | RawResult      |
+
+
+### CommandType
+
+Source of SQL Statement. It can be DirectValue or Variable
+
+<details>
+  <summary>Available Options</summary>
+  <div>
+    <br/>
+    <details>
+      <div>
+        Use numeric value listed in bracket if you have to <a href="https://zappysys.com/links/?id=10099">define expression</a> on this property (for dynamic behavior).
+      </div>
     </details>
   </div>
 </details>
