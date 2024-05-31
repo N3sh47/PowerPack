@@ -435,6 +435,6 @@ Introduction about calling SSRS Reports in SSIS Calling SSRS Reports in SSIS is 
 
 
 
-![Reporting Services](static/img/reporting-services-logo.webp)
+![Reporting Services](/img/reporting-services-logo.webp)
 
 
