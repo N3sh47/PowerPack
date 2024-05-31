@@ -293,6 +293,7 @@ This example shows how to create new DynamoDB table with minimum required option
 ```
 
 **`[CreateTable]`: Create new table with Local secondary index**
+
 This example shows how to create new DynamoDB table with minimum required options. Create table may take few seconds or minutes to provision resources on AWS cloud. See below link for more information on each parameter for CreateTable command http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateTable.html
 
 ```html
@@ -390,6 +391,7 @@ This example shows how to create new DynamoDB table only if table does not exist
 ```
 
 **`[UpdateTable]`: Update table read/write throughput setting**
+
 This example shows how to change table read/write throughput setting. See below link for more information on each parameter for CreateTable command http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html
 
 ```html
@@ -550,4 +552,185 @@ This example shows how to get index size in bytes. This information may not be u
 }
 ```
 
+
+
+
+
+
+**`[PutItem]`: PutItem (Insert with more options)**
+
+This example shows how to insert single document into DynamoDB table. http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_PutItem.html
+/*For more info check: http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_PutItem.html */
+
+```html
+{
+    "TableName": "Thread",
+    "Item": {
+        "LastPostDateTime": {
+            "S": "201303190422"
+        },
+        "Tags": {
+            "SS": ["Update","Multiple Items","HelpMe"]
+        },
+        "ForumName": {
+            "S": "Amazon DynamoDB"
+        },
+        "PostId": {
+            "N": 100
+        },
+        "Message": {
+            "S": "I want to update multiple items in a single API call. What's the best way to do that?"
+        },
+        "Subject": {
+            "S": "How do I update multiple items?"
+        },
+        "LastPostedBy": {
+            "S": "fred@example.com"
+        }
+    },
+    "ConditionExpression": "ForumName <> :f and Subject <> :s",
+    "ExpressionAttributeValues": {
+        ":f": {"S": "Amazon DynamoDB"},
+        ":s": {"S": "How do I update multiple items?"}
+    }
+}
+```
+
+
+**`[DeleteItem]`: DeleteItem (Delete with more options)**
+
+This example shows how to delete single document from DynamoDB table. http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteItem.html
+/*For more info check: http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteItem.html */
+
+```html
+{
+    "TableName": "Thread",
+    "Key": {
+        "ForumName": {
+            "S": "Amazon DynamoDB"
+        },
+        "PostId": {
+            "N": 100
+        }
+    },
+    "ConditionExpression": "attribute_not_exists(Replies)",
+    "ReturnValues": "ALL_OLD"
+}
+```
+
+
+
+**`[UpdateItem]`: UpdateItem (Update document with more options)**
+
+This example shows how to update single document. http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateItem.html
+/*For more info check: http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateItem.html */
+
+```html
+{
+    "TableName": "Thread",
+    "Key": {
+        "ForumName": {
+            "S": "Amazon DynamoDB"
+        },
+        "PostId": {
+            "N": 100
+        }
+    },
+    "UpdateExpression": "set LastPostedBy = :val1",
+    "ConditionExpression": "LastPostedBy = :val2",
+    "ExpressionAttributeValues": {
+        ":val1": {"S": "alice@example.com"},
+        ":val2": {"S": "fred@example.com"}
+    },
+    "ReturnValues": "ALL_NEW"
+}
+```
+
+**`[UpdateItem]`: UpdateItem (When Column name is DynamoDB Reserved Word)**
+
+This example shows how to update document when column name is one of the reserved words in DynamoDB. http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateItem.html
+/*
+For more info check: http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateItem.html 
+List of reserved words: http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html
+*/
+
+```html
+{
+    "TableName": "Thread",
+    "Key": {
+        "ForumName": {
+            "S": "Amazon DynamoDB"
+        },
+        "PostId": {
+            "N": 100
+        }
+    },
+    "UpdateExpression": "set #P = :val1",
+    "ConditionExpression": "LastPostedBy = :val2",
+    "ExpressionAttributeNames": {
+        "#P": {"S": "Status"}
+    },
+    "ExpressionAttributeValues": {
+        ":val1": {"S": "Success"},
+        ":val2": {"S": "fred@example.com"}
+    },
+    "ReturnValues": "ALL_NEW"
+}
+[BatchInsert]: Bulk Insert (Multiple documents)
+This example shows how to insert multiple documents (If you need advanced option for insert then check PutItem command).
+{
+    TableName: 'Thread',
+    Items: [
+        {ForumName: 'Product 1',Subject:'How to return item?',PostId:1, LastPostDateTime:'2015-01-01',PostCategory:'Product',Tags:['Tag1','Tag2','Tag3'], Cost: 1200.50 },
+        {ForumName: 'Product 1',Subject:'How to order item?',PostId:2,LastPostDateTime:'2015-01-02',PostCategory:'Product',Tags:['Tag2','Tag3'], Cost: 100.50 },
+        {ForumName: 'Service 1',Subject:'How to use item?',PostId:1,LastPostDateTime:'2015-01-03',PostCategory:'Service',Tags:[]}
+    ]
+}
+```
+
+
+**`[BatchDelete]`: Bulk delete (Multiple documents)**
+
+This example shows how to delete multiple documents. Just include key columns in the JSON documents and it will delete matching documents. (If you need advanced option for insert then check DeleteItem command).
+
+```html
+{
+    TableName: 'Thread',
+    Items: [
+        {ForumName: 'Product 1',PostId:1},
+        {ForumName: 'Service 1',PostId:1}
+    ]
+}
+```
+
+
+**`[Query]`: Query documents (In SCAN mode)**
+
+This example shows how to query DynamoDB documents with simple SQL like query. This example uses SCAN API which means you can query on any field without needing index but this type of requests are expensive. For more information about SCAN mode visit this link http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Scan.html
+
+```html
+SELECT top 10 * 
+FROM Thread 
+WHERE Subject LIKE 'H%'
+WITH (SCAN)
+[Query]: Query documents (In QUERY mode)
+This example shows how to query DynamoDB documents with simple SQL like query. This example uses QUERY API which means you must HASH column in Where condition. For more information about QUERY mode visit this link http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Query.html
+SELECT top 10 * 
+FROM Thread 
+WHERE ForumName = 'Product 1' AND PostId >= 1 
+WITH (QUERY)
+```
+
+
+## See Also
+
+- [SSIS JSON Source Connector](https://zappysys.com/onlinehelp/ssis-powerpack/scr/json-source.htm)
+- [SSIS Export JSON File Task](https://zappysys.com/onlinehelp/ssis-powerpack/scr/export-json-file-task.htm)
+- [SSIS MongoDB Source Adapter](https://zappysys.com/onlinehelp/ssis-powerpack/scr/mongodb-source.htm)
+- [SSIS Azure Table Storage Source Adapter](https://zappysys.com/onlinehelp/ssis-powerpack/scr/azure-table-storage-source.htm)
+- [SSIS Amazon S3 Storage Task](https://zappysys.com/onlinehelp/ssis-powerpack/scr/amazon-s3-storage-task.htm)
+- [SSIS Amazon Storage Connection Manager](https://zappysys.com/onlinehelp/ssis-powerpack/scr/amazon-storage-connection-manager.htm)
+
+
+## Articles / Tutorials
 
