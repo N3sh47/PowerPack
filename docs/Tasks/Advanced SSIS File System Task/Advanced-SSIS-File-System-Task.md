@@ -8,19 +8,19 @@ sidebar_label: 'Advanced SSIS File System Task'
 
 ## Content
 
-- Video Tutorial
-- Step-By-Step
-    - How to copy files using Advanced File System Task
-    - How to Delete files using Advanced File System Task
-    - How to search file content and replace it using Advanced File System Task
-    - How to check file is exist or not using Advanced File System Task
-    - How to change encoding (UTF8, UTF16 or ASCII) of file using Advanced File System Task
-    - How to get list of files using Advanced File System Task
-    - How to get files count using Advanced File System Task
-- Properties
-- Settings UI
-- See Also
-- References
+- [Video Tutorial](#video-tutorial)
+- [Step-By-Step](#step-by-step)
+    - [How to copy files using Advanced File System Task](#how-to-copy-files-using-advanced-file-system-task)
+    - [How to Delete files using Advanced File System Task](#how-to-delete-files-using-advanced-file-system-task)
+    - [How to search file content and replace it using Advanced File System Task](#how-to-search-file-content-and-replace-it-using-advanced-file-system-task)
+    - [How to check file is exist or not using Advanced File System Task](#how-to-check-file-is-exist-or-not-using-advanced-file-system-task)
+    - [How to change encoding (UTF8, UTF16 or ASCII) of file using Advanced File System Task](#how-to-change-encoding-utf8-utf16-or-ascii-of-file-using-advanced-file-system-task)
+    - [How to get list of files using Advanced File System Task](#how-to-get-list-of-files-using-advanced-file-system-task)
+    - [How to get files count using Advanced File System Task](#how-to-get-files-count-using-advanced-file-system-task)
+- [Properties](#properties)
+- [Settings UI](#settings-ui)
+- [See Also](#see-also)
+- [References](#articles--tutorials)
 
 
 ## Video Tutorial
