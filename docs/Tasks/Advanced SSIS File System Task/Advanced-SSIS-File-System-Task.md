@@ -423,7 +423,7 @@ When you enable this property it will prefix timestamp before Log messages.
 
 
 
-### SSIS PGP Encryption / Decryption (Using FREE GPG Tool)
+### [SSIS PGP Encryption / Decryption (Using FREE GPG Tool)](https://zappysys.com/blog/ssis-pgp-encryption-decryption/)
 
 Introduction In this new article, we will show you how to perform PGP encryption using SSIS (encrypt / decrypt files using public / private key). Our previous article was about SFTP using our SFTP task for SSIS. Now we will show how to encrypt the information. Requirements First of all, you will need SSDT for Business Intelligence for […]
 
@@ -438,3 +438,47 @@ Introduction about calling SSRS Reports in SSIS Calling SSRS Reports in SSIS is 
 ![Reporting Services](/img/reporting-services-logo.webp)
 
 
+### [How to read and write data to HTML in SSIS](https://zappysys.com/blog/read-and-write-data-to-html-in-ssis/)
+
+Introduction to read and write data to HTML in SSIS In this article, we will show how to send values from an SSIS Variable to an HTML file. We will use the SSIS Advanced File System Task to store the list of system files of a folder into a variable and then we will use […]
+
+![HTML5](/img/2000px-HTML5_logo_and_wordmark.svg_.webp)
+
+### [Using Regular Expressions in SSIS](https://zappysys.com/blog/using-regular-expressions-in-ssis/)
+
+Introduction In this short article you will learn how to write Regular expressions in SSIS (i.e. Regex) and what tool to use to test them. You will also find helpful resources on how to write more sophisticated expressions and learn more about them. For demo purpose we will use FREE SSIS Regex Parser Task to parse and […]
+
+
+![SSIS Regex](/img/ssis-regex-parser-task.webp)
+
+### [How to remove invalid characters from XML using SSIS and Regex](https://zappysys.com/blog/how-to-remove-invalid-characters-from-xml-using-ssis-and-regex/)
+ Introduction In this blog post you will see how to remove invalid characters from XML using SSIS. We will use search and replace feature of Advanced File System Task. Remove Invalid characters from XML Xml file specification have restriction about which characters can be part of XML data and which should be avoided. If you use […]
+
+
+![SSIS](/img/ssis-remove-invalid-characters-from-xml-file-replace-with-regex.webp)
+
+### [SSIS check file is locked and wait until file is unlocked (C# Script)](https://zappysys.com/blog/ssis-check-file-locked-wait-file-unlocked-c-script/)
+Introduction In this small blog post you will learn How to move files using SSIS Advanced File System Task and How to wait until file is unlocked using C# Script Task. How to check if file is locked (SSIS C# Script Task) If you want to check if file is locked in C# then below […]
+
+
+![Check File](/img/ssis-check-file-locked-wait-until-unlocked.webp)
+
+### [Get list of files in SSIS for Looping](https://zappysys.com/blog/get-list-of-files-and-folders-in-ssis-for-looping/)
+
+Introduction In this post you will learn how to use Advanced File System Task to get list of files and folders into variable. Advanced File System Task is significantly better than native SSIS File System Task How to get list of files in SSIS Most simplest way to get list of files in SSIS is […]
+
+![Get File](/img/ssis-get-file-list-as-recordset-for-looping.webp)
+
+### [Search and replace in files using SSIS – No Coding](https://zappysys.com/blog/search-and-replace-in-files-using-ssis-no-coding/)
+
+Introduction Many times you have requirement to search and replace in files (single or multiple file) content using SSIS. If you are not C# or VB.net programmer then you may find yourself at dead end struggling how to achieve this in SSIS. If you have this need then you can use Advanced File System Task […]
+
+
+![Search](/img/file-search-replace-text-in-ssis.webp)
+
+### [How to change file encoding in SSIS (UTF8, ASCII or UTF16)](https://zappysys.com/blog/how-to-change-file-encoding-in-ssis-utf8-ascii-or-utf16/)
+Introduction Many times during your ETL process you receive files which are in different encoding than you expect. Example all files are in UTF-16 format but your application expect them to be in UTF-8. Or Sometimes files are in ASCII format and you want to convert to UTF-8. In this post you will see how […]
+
+
+
+![Change](/img/ssis-change-file-encoding-multiple-utf8-unt16-ascii.webp)
