@@ -138,7 +138,7 @@ Available Options (Use numeric value listed in bracket if you have to [define ex
     <br/>
     <details>
       <summary>
-        <div>Use numeric value listed in bracket if you have to <a href="https://zappysys.com/links/?id=10099">define expression</a> on this property (for dynamic behavior).</div>
+        Use numeric value listed in bracket if you have to <a href="https://zappysys.com/links/?id=10099">define expression</a> on this property (for dynamic behavior).
       </summary>
     </details>
   </div>
