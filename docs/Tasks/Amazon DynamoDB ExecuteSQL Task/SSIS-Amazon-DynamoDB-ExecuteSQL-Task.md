@@ -248,9 +248,9 @@ When you enable this property it will prefix timestamp before Log messages.
 
 ## Setting UI
 
-![Amazon DynamoDB](static/img/amazon-dynamodb-executesql-settingui-1.png)
+![Amazon DynamoDB](/img/amazon-dynamodb-executesql-settingui-1.png)
 
-![Amazon DynamoDB](static/img/amazon-dynamodb-executesql-settingui-2.png)
+![Amazon DynamoDB](/img/amazon-dynamodb-executesql-settingui-2.png)
 
 #### Examples
 
