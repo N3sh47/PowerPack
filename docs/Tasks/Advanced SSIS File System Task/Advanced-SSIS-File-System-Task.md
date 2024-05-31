@@ -423,3 +423,18 @@ When you enable this property it will prefix timestamp before Log messages.
 
 
 
+### SSIS PGP Encryption / Decryption (Using FREE GPG Tool)
+
+Introduction In this new article, we will show you how to perform PGP encryption using SSIS (encrypt / decrypt files using public / private key). Our previous article was about SFTP using our SFTP task for SSIS. Now we will show how to encrypt the information. Requirements First of all, you will need SSDT for Business Intelligence for […]
+
+![PGP Encryption](/img/pgp-encryption-logo.webp)
+
+### [Calling SSRS Reports in SSIS (Export / Email)](https://zappysys.com/blog/calling-ssrs-reports-in-ssis-export-emai/)
+
+Introduction about calling SSRS Reports in SSIS Calling SSRS Reports in SSIS is straightforward using the ZappySys Reporting Services task. Also, we will show how to export files SSRS files using SSIS, how to send reports in emails and how to send parameters. In addition, we will be using this ZappySys SSIS PowerPack component to make things work: […]
+
+
+
+![Reporting Services](static/img/reporting-services-logo.webp)
+
+
