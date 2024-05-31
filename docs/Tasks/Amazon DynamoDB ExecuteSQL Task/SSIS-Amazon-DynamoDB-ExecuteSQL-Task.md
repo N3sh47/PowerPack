@@ -133,11 +133,9 @@ ResultSet Type. It can be None, FullResultset or SingleValue. When FullResultset
   <summary>Available Options</summary>
   <div>
     <br/>
-    <details>
-      <div>
+    <div>
         Use numeric value listed in bracket if you have to <a href="https://zappysys.com/links/?id=10099">define expression</a> on this property (for dynamic behavior).
       </div>
-    </details>
   </div>
 </details>
 
